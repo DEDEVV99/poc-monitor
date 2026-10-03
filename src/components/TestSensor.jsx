@@ -1,12 +1,21 @@
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import plantSettings from "../data/plantSettings";
 
 function TestSensor({ selectedPlant }) {
-  const addReading = useMutation(
-    api.sensors.addReading
+  const addReading = useMutation(api.sensors.addReading);
+
+  const plant = plantSettings[selectedPlant];
+
+  const normalPh = Number(
+    ((plant.ph.low + plant.ph.high) / 2).toFixed(1)
   );
 
-  const sendData = async (ph, temperature) => {
+  const normalTemperature = Number(
+    ((plant.temperature.low + plant.temperature.high) / 2).toFixed(1)
+  );
+
+  const sendData = async (label, ph, temperature) => {
     try {
       await addReading({
         plant: selectedPlant,
@@ -16,131 +25,123 @@ function TestSensor({ selectedPlant }) {
         status: "online",
       });
 
-      const plantName =
-        selectedPlant === "kangkung"
-          ? "🌱 Kangkung"
-          : "🍆 Terong";
-
       alert(
         `Data berhasil dikirim!\n\n` +
-        `Tanaman: ${plantName}\n` +
-        `pH: ${ph}\n` +
-        `Suhu: ${temperature} °C`
+          `Pengujian: ${label}\n` +
+          `Tanaman: ${plant.icon} ${plant.name}\n` +
+          `pH: ${ph}\n` +
+          `Suhu: ${temperature} °C`
       );
-
     } catch (error) {
       console.error(error);
-
-      alert(
-        "Gagal mengirim data sensor."
-      );
+      alert("Gagal mengirim data sensor.");
     }
   };
 
   return (
     <div className="test-sensor-card">
-
-      {/* =========================
-          HEADER
-      ========================= */}
-
       <div className="test-sensor-header">
-
         <div>
-
-          <p className="page-label">
-            MODE PENGUJIAN
-          </p>
-
-          <h3>
-            Data Sensor Dummy
-          </h3>
-
+          <p className="page-label">MODE PENGUJIAN</p>
+          <h3>Demo Data Sensor</h3>
         </div>
 
-        <span className="test-badge">
-          TEST
-        </span>
-
+        <span className="test-badge">DEMO</span>
       </div>
-
-
-      {/* =========================
-          TANAMAN AKTIF
-      ========================= */}
 
       <div className="test-plant-info">
-
-        <span>
-          Tanaman yang dipilih:
-        </span>
+        <span>Tanaman yang dipilih:</span>
 
         <strong>
-          {selectedPlant === "kangkung"
-            ? "🌱 Kangkung"
-            : "🍆 Terong"}
+          {plant.icon} {plant.name}
         </strong>
-
       </div>
-
-
-      {/* =========================
-          DESKRIPSI
-      ========================= */}
 
       <p className="test-description">
-
-        Gunakan tombol berikut untuk
-        mensimulasikan data sensor.
-        Data akan disimpan bersama
-        tanaman yang sedang dipilih.
-
+        Gunakan tombol berikut untuk menguji kondisi pH dan suhu berdasarkan
+        parameter tanaman yang dipilih.
       </p>
 
-
-      {/* =========================
-          BUTTON
-      ========================= */}
-
-      <div className="test-buttons">
+      <div className="demo-section">
+        <h4>Data Normal</h4>
 
         <button
+          className="demo-button normal"
           onClick={() =>
-            sendData(6.2, 28.5)
+            sendData(
+              "Data Normal",
+              normalPh,
+              normalTemperature
+            )
           }
         >
-          Normal
+          ✓ Normal
         </button>
-
-
-        <button
-          onClick={() =>
-            sendData(6.5, 30.0)
-          }
-        >
-          Data 2
-        </button>
-
-
-        <button
-          onClick={() =>
-            sendData(5.8, 27.5)
-          }
-        >
-          Data 3
-        </button>
-
-
-        <button
-          onClick={() =>
-            sendData(4.8, 35.0)
-          }
-        >
-          Data Rendah/Tinggi
-        </button>
-
       </div>
 
+      <div className="demo-section">
+        <h4>Uji pH</h4>
+
+        <div className="demo-buttons">
+          <button
+            className="demo-button low"
+            onClick={() =>
+              sendData(
+                "pH Rendah",
+                Number((plant.ph.low - 0.5).toFixed(1)),
+                normalTemperature
+              )
+            }
+          >
+            ↓ pH Rendah
+          </button>
+
+          <button
+            className="demo-button high"
+            onClick={() =>
+              sendData(
+                "pH Tinggi",
+                Number((plant.ph.high + 0.5).toFixed(1)),
+                normalTemperature
+              )
+            }
+          >
+            ↑ pH Tinggi
+          </button>
+        </div>
+      </div>
+
+      <div className="demo-section">
+        <h4>Uji Suhu</h4>
+
+        <div className="demo-buttons">
+          <button
+            className="demo-button low"
+            onClick={() =>
+              sendData(
+                "Suhu Rendah",
+                normalPh,
+                Number((plant.temperature.low - 2).toFixed(1))
+              )
+            }
+          >
+            ↓ Suhu Rendah
+          </button>
+
+          <button
+            className="demo-button high"
+            onClick={() =>
+              sendData(
+                "Suhu Tinggi",
+                normalPh,
+                Number((plant.temperature.high + 2).toFixed(1))
+              )
+            }
+          >
+            ↑ Suhu Tinggi
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

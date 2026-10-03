@@ -2298,3 +2298,1088 @@ td {
   }
 
 }
+.demo-section {
+  margin-top: 20px;
+}
+
+.demo-section h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.demo-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.demo-button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.demo-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.demo-button.normal {
+  background: #e8f7ed;
+  color: #16803c;
+}
+
+.demo-button.low {
+  background: #eaf3ff;
+  color: #2672b9;
+}
+
+.demo-button.high {
+  background: #fff0ee;
+  color: #d64b3f;
+}
+
+@media (max-width: 600px) {
+  .demo-buttons {
+    flex-direction: column;
+  }
+
+  .demo-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   RESPONSIVE FINAL - POC MONITOR
+   Tempelkan di bagian PALING BAWAH index.css
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+   Maksimal 1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .sidebar {
+    width: 230px;
+  }
+
+  .main-content {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+    padding: 30px;
+  }
+
+  .page {
+    max-width: 100%;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .purpose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sensor-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET KECIL
+   Maksimal 850px
+========================================================= */
+
+@media (max-width: 850px) {
+
+  /* SIDEBAR */
+
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    width: calc(100% - 210px);
+    margin-left: 210px;
+    padding: 25px;
+  }
+
+
+  /* TEXT */
+
+  .page-header h1 {
+    font-size: 27px;
+  }
+
+
+  /* GRID */
+
+  .sensor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purpose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sensor-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* HERO */
+
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-visual {
+    min-height: 240px;
+  }
+
+
+  /* RECOMMENDATION */
+
+  .recommendation-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* PARAMETER */
+
+  .parameter-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   Maksimal 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* =======================================================
+     GLOBAL
+  ======================================================= */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     APP
+  ======================================================= */
+
+  .app {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+
+  /* =======================================================
+     SIDEBAR
+  ======================================================= */
+
+  .sidebar {
+    position: relative;
+
+    left: auto;
+    top: auto;
+    bottom: auto;
+
+    width: 100%;
+    min-height: auto;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+
+  /* BRAND */
+
+  .brand {
+    padding: 15px 18px;
+
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 20px;
+  }
+
+  .brand h2 {
+    font-size: 16px;
+  }
+
+  .brand span {
+    font-size: 10px;
+  }
+
+
+  /* NAVIGATION */
+
+  .navigation {
+    display: flex;
+
+    flex-direction: row;
+
+    width: 100%;
+
+    gap: 6px;
+
+    padding: 10px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navigation a {
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+
+    padding: 10px 13px;
+
+    font-size: 12px;
+  }
+
+
+  /* SIDEBAR FOOTER */
+
+  .sidebar-footer {
+    display: none;
+  }
+
+
+  /* =======================================================
+     MAIN CONTENT
+  ======================================================= */
+
+  .main-content {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 20px 14px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     PAGE HEADER
+  ======================================================= */
+
+  .page-header {
+    width: 100%;
+  }
+
+  .page-label {
+    font-size: 10px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    word-break: break-word;
+  }
+
+  .page-description {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     HERO DASHBOARD
+  ======================================================= */
+
+  .hero-section {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 25px;
+
+    padding: 22px;
+
+    margin-bottom: 30px;
+
+    border-radius: 18px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 29px;
+
+    line-height: 1.2;
+
+    word-break: break-word;
+  }
+
+  .hero-description {
+    width: 100%;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .hero-button {
+    width: 100%;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 12px 15px;
+  }
+
+  .hero-visual {
+    width: 100%;
+
+    min-height: 220px;
+  }
+
+  .hero-icon {
+    width: 125px;
+    height: 125px;
+
+    font-size: 58px;
+  }
+
+  .floating-card {
+    padding: 9px 11px;
+  }
+
+  .floating-card span {
+    font-size: 18px;
+  }
+
+  .floating-card small {
+    font-size: 8px;
+  }
+
+  .floating-card strong {
+    font-size: 12px;
+  }
+
+  .ph-floating {
+    top: 10px;
+    right: 0;
+  }
+
+  .temp-floating {
+    bottom: 10px;
+    left: 0;
+  }
+
+
+  /* =======================================================
+     CONTENT SECTION
+  ======================================================= */
+
+  .content-section {
+    margin-top: 30px;
+  }
+
+  .section-heading {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+
+
+  /* =======================================================
+     EXPLANATION
+  ======================================================= */
+
+  .explanation-card {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    margin-top: 15px;
+  }
+
+  .explanation-card h3 {
+    font-size: 16px;
+  }
+
+  .explanation-card p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     SENSOR INFO
+  ======================================================= */
+
+  .sensor-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .sensor-info-card {
+    padding: 20px;
+  }
+
+
+  /* =======================================================
+     SENSOR GRID
+  ======================================================= */
+
+  .sensor-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .sensor-card {
+    width: 100%;
+
+    padding: 20px;
+  }
+
+  .sensor-card-top {
+    gap: 8px;
+  }
+
+  .sensor-value {
+    font-size: 34px;
+  }
+
+  .sensor-value strong {
+    font-size: 34px;
+  }
+
+  .sensor-range {
+    font-size: 10px;
+  }
+
+
+  /* =======================================================
+     MONITORING GRID
+  ======================================================= */
+
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .monitoring-card {
+    padding: 20px;
+  }
+
+  .monitoring-card h2 {
+    font-size: 27px;
+  }
+
+
+  /* =======================================================
+     PLANT SELECTOR
+  ======================================================= */
+
+  .plant-selector-card {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+
+    padding: 18px;
+  }
+
+  .plant-selector-info h3 {
+    font-size: 16px;
+  }
+
+  .plant-selector-info p:last-child {
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+  .plant-select-wrapper {
+    width: 100%;
+  }
+
+  .plant-select-wrapper select {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 11px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     PARAMETER CARD
+  ======================================================= */
+
+  .parameter-card {
+    padding: 18px;
+  }
+
+  .parameter-title {
+    gap: 10px;
+  }
+
+  .parameter-title h3 {
+    font-size: 15px;
+  }
+
+  .parameter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .parameter-item {
+    padding: 12px;
+  }
+
+
+  /* =======================================================
+     OUTPUT MONITORING
+  ======================================================= */
+
+  .monitoring-output-grid {
+    width: 100%;
+  }
+
+  .output-card {
+    padding: 20px;
+  }
+
+  .output-value {
+    font-size: 38px;
+  }
+
+  .output-value small {
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     DEVICE STATUS
+  ======================================================= */
+
+  .device-card,
+  .device-status-card {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 18px;
+  }
+
+  .device-card h3,
+  .device-status-info h3 {
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     STATUS CARD
+  ======================================================= */
+
+  .status-card {
+    padding: 20px;
+  }
+
+  .status-card-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .status-card h3 {
+    font-size: 16px;
+  }
+
+  .status-info {
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 20px;
+  }
+
+
+  /* =======================================================
+     RECOMMENDATION
+  ======================================================= */
+
+  .recommendation-card {
+    padding: 18px;
+  }
+
+  .recommendation-header h2 {
+    font-size: 16px;
+  }
+
+  .recommendation-list {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .recommendation-item {
+    padding: 14px;
+  }
+
+
+  /* =======================================================
+     TEST SENSOR
+  ======================================================= */
+
+  .test-sensor-card {
+    width: 100%;
+
+    padding: 18px;
+  }
+
+  .test-sensor-header {
+    gap: 10px;
+  }
+
+  .test-sensor-header h3 {
+    font-size: 15px;
+  }
+
+  .test-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .test-buttons button {
+    width: 100%;
+
+    padding: 11px;
+  }
+
+
+  /* =======================================================
+     HISTORY
+  ======================================================= */
+
+  .history-section {
+    width: 100%;
+  }
+
+  .history-card {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .history-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    padding: 13px;
+  }
+
+  .select-all {
+    width: 100%;
+  }
+
+  .delete-history-button {
+    width: 100%;
+  }
+
+  .history-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .history-table {
+    min-width: 700px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px;
+
+    white-space: nowrap;
+  }
+
+
+  /* =======================================================
+     TABLE UMUM
+  ======================================================= */
+
+  .table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
+
+  .about-card {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px;
+  }
+
+  .about-card h2 {
+    font-size: 18px;
+  }
+
+  .about-card p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     DEVELOPER PROFILE
+  ======================================================= */
+
+  .developer-profile {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 20px;
+  }
+
+  .developer-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .developer-info h2 {
+    font-size: 22px;
+  }
+
+  .developer-info > p:not(.page-label):not(.developer-role) {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     PURPOSE
+  ======================================================= */
+
+  .purpose-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .purpose-card {
+    padding: 20px;
+  }
+
+
+  /* =======================================================
+     INFORMATION
+  ======================================================= */
+
+  .information-section {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px;
+  }
+
+  .information-section h2 {
+    font-size: 18px;
+  }
+
+  .component-list div {
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+
+  /* =======================================================
+     SUMMARY
+  ======================================================= */
+
+  .summary-card {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 22px;
+  }
+
+  .summary-card h2 {
+    font-size: 20px;
+  }
+
+
+  /* =======================================================
+     WORKFLOW
+  ======================================================= */
+
+  .workflow {
+    flex-direction: column;
+
+    width: 100%;
+
+    overflow-x: visible;
+  }
+
+  .workflow-item {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .workflow-arrow {
+    justify-content: center;
+
+    transform: rotate(90deg);
+
+    height: 20px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .monitoring-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 22px;
+
+    margin-top: 30px;
+  }
+
+  .monitoring-cta h2 {
+    font-size: 20px;
+  }
+
+
+  /* =======================================================
+     DEMO BUTTON
+  ======================================================= */
+
+  .demo-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .demo-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL
+   Maksimal 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .main-content {
+    padding: 16px 10px;
+  }
+
+  .brand {
+    padding: 13px 14px;
+  }
+
+  .navigation {
+    padding: 8px;
+  }
+
+  .navigation a {
+    padding: 9px 11px;
+
+    font-size: 11px;
+  }
+
+  .page-header h1 {
+    font-size: 22px;
+  }
+
+  .hero-section {
+    padding: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-visual {
+    min-height: 190px;
+  }
+
+  .hero-icon {
+    width: 105px;
+    height: 105px;
+
+    font-size: 48px;
+  }
+
+  .floating-card {
+    padding: 7px 9px;
+  }
+
+  .floating-card span {
+    font-size: 16px;
+  }
+
+  .floating-card strong {
+    font-size: 11px;
+  }
+
+  .sensor-card,
+  .monitoring-card,
+  .output-card {
+    padding: 17px;
+  }
+
+  .sensor-value,
+  .sensor-value strong {
+    font-size: 30px;
+  }
+
+  .monitoring-card h2 {
+    font-size: 24px;
+  }
+
+  .parameter-card,
+  .recommendation-card,
+  .test-sensor-card {
+    padding: 16px;
+  }
+
+  .developer-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+}
