@@ -1,33 +1,22 @@
-const plantSettings = {
-  kangkung: {
-    name: "Kangkung",
-    icon: "🌱",
+const pocSettings = {
+  name: "POC Limbah Organik",
+  icon: "🌴",
 
-    ph: {
-      low: 5.5,
-      high: 6.5,
-    },
+  objectName: "Bibit Kelapa Sawit",
+  phase: "Pembibitan Awal (Pre-Nursery)",
 
-    temperature: {
-      low: 20,
-      high: 32,
-    },
+  description:
+    "Monitoring parameter pH dan suhu Pupuk Organik Cair (POC) berbahan limbah organik yang digunakan pada bibit kelapa sawit tahap pembibitan awal.",
+
+  ph: {
+    low: null,
+    high: null,
   },
 
-  terong: {
-    name: "Terong",
-    icon: "🍆",
-
-    ph: {
-      low: 5.0,
-      high: 6.0,
-    },
-
-    temperature: {
-      low: 22,
-      high: 30,
-    },
+  temperature: {
+    low: null,
+    high: null,
   },
 };
 
-export default plantSettings;
+export default pocSettings;

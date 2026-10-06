@@ -1,10 +1,12 @@
 import { useState } from "react";
+
 import { useQuery, useMutation } from "convex/react";
+
 import { api } from "../../convex/_generated/api";
 
 import TestSensor from "../components/TestSensor";
 
-import plantSettings from "../data/plantSettings";
+import pocSettings from "../data/plantSettings";
 
 import {
   getStatus,
@@ -13,21 +15,11 @@ import {
 
 
 function Monitoring() {
-
-  // =========================
-  // PILIH TANAMAN
-  // =========================
-
-  const [selectedPlant, setSelectedPlant] =
-    useState("kangkung");
-
-
   // =========================
   // DATA YANG DIPILIH
   // =========================
 
-  const [selectedHistory, setSelectedHistory] =
-    useState([]);
+  const [selectedHistory, setSelectedHistory] = useState([]);
 
 
   // =========================
@@ -61,11 +53,10 @@ function Monitoring() {
 
 
   // =========================
-  // PARAMETER TANAMAN
+  // PARAMETER POC
   // =========================
 
-  const plant =
-    plantSettings[selectedPlant];
+  const poc = pocSettings;
 
 
   // =========================
@@ -75,7 +66,7 @@ function Monitoring() {
   const phStatus = latestData
     ? getStatus(
         latestData.ph,
-        plant.ph
+        poc.ph
       )
     : null;
 
@@ -83,7 +74,7 @@ function Monitoring() {
   const temperatureStatus = latestData
     ? getStatus(
         latestData.temperature,
-        plant.temperature
+        poc.temperature
       )
     : null;
 
@@ -96,8 +87,7 @@ function Monitoring() {
     latestData && phStatus
       ? getRecommendation(
           "ph",
-          phStatus.type,
-          plant.name
+          phStatus.type
         )
       : "";
 
@@ -106,8 +96,7 @@ function Monitoring() {
     latestData && temperatureStatus
       ? getRecommendation(
           "temperature",
-          temperatureStatus.type,
-          plant.name
+          temperatureStatus.type
         )
       : "";
 
@@ -117,7 +106,6 @@ function Monitoring() {
   // =========================
 
   const formatDate = (timestamp) => {
-
     if (!timestamp) {
       return "-";
     }
@@ -135,20 +123,26 @@ function Monitoring() {
 
 
   // =========================
-  // FORMAT NAMA TANAMAN
+  // FORMAT NAMA OBJEK
   // =========================
 
-  const getPlantName = (plantId) => {
+  const getObjectName = (plantId) => {
+    if (
+      plantId === "bibit_sawit_pre_nursery"
+    ) {
+      return "🌴 Bibit Kelapa Sawit";
+    }
 
+    // Untuk data lama yang masih tersimpan
     if (plantId === "kangkung") {
-      return "🌱 Kangkung";
+      return "🌱 Data Lama - Kangkung";
     }
 
     if (plantId === "terong") {
-      return "🍆 Terong";
+      return "🍆 Data Lama - Terong";
     }
 
-    return "Tidak diketahui";
+    return "🌴 Bibit Kelapa Sawit";
   };
 
 
@@ -156,15 +150,17 @@ function Monitoring() {
   // PARAMETER RIWAYAT
   // =========================
 
-  const getHistoryPlant = (plantId) => {
-
+  const getHistorySettings = (plantId) => {
+    // Data baru penelitian
     if (
-      plantId &&
-      plantSettings[plantId]
+      plantId ===
+      "bibit_sawit_pre_nursery"
     ) {
-      return plantSettings[plantId];
+      return poc;
     }
 
+    // Data lama tidak dihitung menggunakan
+    // parameter tanaman lama.
     return null;
   };
 
@@ -185,24 +181,18 @@ function Monitoring() {
   // =========================
 
   const handleSelectHistory = (id) => {
-
     setSelectedHistory((current) => {
-
       if (current.includes(id)) {
-
         return current.filter(
           (item) => item !== id
         );
-
       }
 
       return [
         ...current,
         id,
       ];
-
     });
-
   };
 
 
@@ -211,15 +201,12 @@ function Monitoring() {
   // =========================
 
   const handleSelectAll = () => {
-
     if (!history) {
       return;
     }
 
     if (isAllSelected) {
-
       setSelectedHistory([]);
-
       return;
     }
 
@@ -228,7 +215,6 @@ function Monitoring() {
         (item) => item._id
       )
     );
-
   };
 
 
@@ -237,49 +223,38 @@ function Monitoring() {
   // =========================
 
   const handleDeleteSelected = async () => {
-
     if (
       selectedHistory.length === 0
     ) {
       return;
     }
 
-
     const confirmed =
       window.confirm(
         `Apakah Anda yakin ingin menghapus ${selectedHistory.length} data riwayat?\n\nData yang sudah dihapus tidak dapat dikembalikan.`
       );
 
-
     if (!confirmed) {
       return;
     }
 
-
     try {
-
       await deleteReadings({
         ids: selectedHistory,
       });
 
-
       setSelectedHistory([]);
-
 
       alert(
         "Data riwayat berhasil dihapus."
       );
-
     } catch (error) {
-
       console.error(error);
 
       alert(
         "Gagal menghapus data riwayat."
       );
-
     }
-
   };
 
 
@@ -292,9 +267,7 @@ function Monitoring() {
 
 
   return (
-
     <div className="monitoring-page">
-
 
       {/* =================================================
           HEADER
@@ -313,11 +286,12 @@ function Monitoring() {
           </h1>
 
           <p className="page-description">
-
-            Pantau kondisi pH dan suhu POC
-            berdasarkan jenis tanaman yang
-            dipilih.
-
+            Pantau parameter pH dan suhu
+            Pupuk Organik Cair (POC)
+            berbahan limbah organik
+            yang digunakan pada bibit
+            kelapa sawit tahap pembibitan
+            awal (pre-nursery).
           </p>
 
         </div>
@@ -326,7 +300,7 @@ function Monitoring() {
 
 
       {/* =================================================
-          PILIH TANAMAN
+          OBJEK PENELITIAN
       ================================================= */}
 
       <div className="plant-selector-card">
@@ -334,18 +308,16 @@ function Monitoring() {
         <div className="plant-selector-info">
 
           <p className="page-label">
-            TANAMAN
+            OBJEK PENELITIAN
           </p>
 
           <h3>
-            Pilih Tanaman
+            🌴 Bibit Kelapa Sawit
           </h3>
 
           <p>
-
-            Parameter sensor akan disesuaikan
-            dengan tanaman yang dipilih.
-
+            Tahap pembibitan awal
+            (pre-nursery)
           </p>
 
         </div>
@@ -353,24 +325,9 @@ function Monitoring() {
 
         <div className="plant-select-wrapper">
 
-          <select
-            value={selectedPlant}
-            onChange={(e) =>
-              setSelectedPlant(
-                e.target.value
-              )
-            }
-          >
-
-            <option value="kangkung">
-              🌱 Kangkung
-            </option>
-
-            <option value="terong">
-              🍆 Terong
-            </option>
-
-          </select>
+          <strong>
+            POC Limbah Organik
+          </strong>
 
         </div>
 
@@ -378,7 +335,7 @@ function Monitoring() {
 
 
       {/* =================================================
-          PARAMETER TANAMAN
+          PARAMETER POC
       ================================================= */}
 
       <div className="parameter-card">
@@ -386,17 +343,17 @@ function Monitoring() {
         <div className="parameter-title">
 
           <span className="plant-icon">
-            {plant.icon}
+            🧪
           </span>
 
           <div>
 
             <p className="page-label">
-              PARAMETER
+              PARAMETER MONITORING
             </p>
 
             <h3>
-              {plant.name}
+              POC Limbah Organik
             </h3>
 
           </div>
@@ -409,15 +366,11 @@ function Monitoring() {
           <div className="parameter-item">
 
             <span>
-              pH Normal
+              pH POC
             </span>
 
             <strong>
-
-              {plant.ph.low}
-              {" – "}
-              {plant.ph.high}
-
+              Belum ditetapkan
             </strong>
 
           </div>
@@ -426,16 +379,11 @@ function Monitoring() {
           <div className="parameter-item">
 
             <span>
-              Suhu Normal
+              Suhu POC
             </span>
 
             <strong>
-
-              {plant.temperature.low}
-              {" – "}
-              {plant.temperature.high}
-              °C
-
+              Belum ditetapkan
             </strong>
 
           </div>
@@ -471,6 +419,7 @@ function Monitoring() {
             <span className="last-update">
 
               Update:{" "}
+
               {formatDate(
                 latestData.timestamp
               )}
@@ -503,11 +452,9 @@ function Monitoring() {
             </h3>
 
             <p>
-
               Gunakan tombol pengujian
               untuk mengirim data sensor
               dummy.
-
             </p>
 
           </div>
@@ -515,7 +462,6 @@ function Monitoring() {
         ) : (
 
           <div className="sensor-grid">
-
 
             {/* =========================
                 PH
@@ -528,11 +474,12 @@ function Monitoring() {
                 <div>
 
                   <span className="sensor-name">
-                    pH
+                    pH POC
                   </span>
 
                   <p>
                     Tingkat keasaman
+                    Pupuk Organik Cair
                   </p>
 
                 </div>
@@ -556,10 +503,9 @@ function Monitoring() {
 
               <div className="sensor-range">
 
-                Parameter {plant.name}:{" "}
-                {plant.ph.low}
-                {" – "}
-                {plant.ph.high}
+                Parameter POC:
+                {" "}
+                Belum ditetapkan
 
               </div>
 
@@ -577,11 +523,12 @@ function Monitoring() {
                 <div>
 
                   <span className="sensor-name">
-                    Suhu
+                    Suhu POC
                   </span>
 
                   <p>
-                    Temperatur POC
+                    Temperatur Pupuk
+                    Organik Cair
                   </p>
 
                 </div>
@@ -609,11 +556,9 @@ function Monitoring() {
 
               <div className="sensor-range">
 
-                Parameter {plant.name}:{" "}
-                {plant.temperature.low}
-                {" – "}
-                {plant.temperature.high}
-                °C
+                Parameter POC:
+                {" "}
+                Belum ditetapkan
 
               </div>
 
@@ -636,7 +581,8 @@ function Monitoring() {
 
           <div className="device-status-info">
 
-            <span className="online-dot"></span>
+            <span className="online-dot">
+            </span>
 
             <div>
 
@@ -668,7 +614,7 @@ function Monitoring() {
 
 
       {/* =================================================
-          REKOMENDASI
+          REKOMENDASI / INFORMASI
       ================================================= */}
 
       {latestData && (
@@ -680,11 +626,11 @@ function Monitoring() {
             <div>
 
               <p className="page-label">
-                REKOMENDASI
+                INFORMASI
               </p>
 
               <h2>
-                Perhatian Sistem
+                Kondisi Parameter
               </h2>
 
             </div>
@@ -699,7 +645,6 @@ function Monitoring() {
 
           <div className="recommendation-list">
 
-
             {/* PH */}
 
             <div className="recommendation-item">
@@ -707,7 +652,7 @@ function Monitoring() {
               <div className="recommendation-item-title">
 
                 <strong>
-                  pH
+                  pH POC
                 </strong>
 
                 <span
@@ -733,7 +678,7 @@ function Monitoring() {
               <div className="recommendation-item-title">
 
                 <strong>
-                  Suhu
+                  Suhu POC
                 </strong>
 
                 <span
@@ -762,9 +707,7 @@ function Monitoring() {
           TEST SENSOR
       ================================================= */}
 
-      <TestSensor
-        selectedPlant={selectedPlant}
-      />
+      <TestSensor />
 
 
       {/* =================================================
@@ -791,7 +734,6 @@ function Monitoring() {
 
 
         <div className="history-card">
-
 
           {/* =========================
               LOADING
@@ -855,7 +797,8 @@ function Monitoring() {
                 <button
                   className="delete-history-button"
                   disabled={
-                    selectedHistory.length === 0
+                    selectedHistory.length ===
+                    0
                   }
                   onClick={
                     handleDeleteSelected
@@ -866,10 +809,16 @@ function Monitoring() {
 
                   {selectedHistory.length >
                     0 && (
+
                     <span>
                       {" "}
-                      ({selectedHistory.length})
+                      (
+                      {
+                        selectedHistory.length
+                      }
+                      )
                     </span>
+
                   )}
 
                 </button>
@@ -898,7 +847,7 @@ function Monitoring() {
                       </th>
 
                       <th>
-                        Tanaman
+                        Objek
                       </th>
 
                       <th>
@@ -932,11 +881,11 @@ function Monitoring() {
                       (item) => {
 
                         // =========================
-                        // PARAMETER TANAMAN
+                        // PARAMETER RIWAYAT
                         // =========================
 
-                        const historyPlant =
-                          getHistoryPlant(
+                        const historySettings =
+                          getHistorySettings(
                             item.plant
                           );
 
@@ -947,13 +896,13 @@ function Monitoring() {
 
                         let historyPhStatus = {
                           label: "-",
-                          type: "normal",
+                          type: "unknown",
                         };
 
 
                         let historyTemperatureStatus = {
                           label: "-",
-                          type: "normal",
+                          type: "unknown",
                         };
 
 
@@ -962,20 +911,20 @@ function Monitoring() {
                         // =========================
 
                         if (
-                          historyPlant
+                          historySettings
                         ) {
 
                           historyPhStatus =
                             getStatus(
                               item.ph,
-                              historyPlant.ph
+                              historySettings.ph
                             );
 
 
                           historyTemperatureStatus =
                             getStatus(
                               item.temperature,
-                              historyPlant.temperature
+                              historySettings.temperature
                             );
 
                         }
@@ -986,7 +935,6 @@ function Monitoring() {
                           <tr
                             key={item._id}
                           >
-
 
                             {/* CHECKBOX */}
 
@@ -1018,13 +966,13 @@ function Monitoring() {
                             </td>
 
 
-                            {/* TANAMAN */}
+                            {/* OBJEK */}
 
                             <td>
 
                               <span className="history-plant">
 
-                                {getPlantName(
+                                {getObjectName(
                                   item.plant
                                 )}
 
@@ -1038,9 +986,11 @@ function Monitoring() {
                             <td>
 
                               <strong>
+
                                 {item.ph.toFixed(
                                   2
                                 )}
+
                               </strong>
 
                             </td>
@@ -1127,8 +1077,8 @@ function Monitoring() {
       </div>
 
     </div>
-
   );
 }
+
 
 export default Monitoring;

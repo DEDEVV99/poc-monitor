@@ -4,7 +4,9 @@ function Dashboard() {
   return (
     <div className="page dashboard-page">
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
       <section className="hero-section">
 
         <div className="hero-content">
@@ -14,15 +16,16 @@ function Dashboard() {
           </p>
 
           <h1>
-            Monitoring Kondisi Pupuk POC
-            Berbasis IoT
+            Monitoring POC untuk
+            Bibit Kelapa Sawit
           </h1>
 
           <p className="hero-description">
-            POC Monitor merupakan website monitoring yang
-            digunakan untuk memantau kondisi pH dan suhu
-            pupuk POC melalui perangkat Internet of Things
-            atau IoT.
+            POC Monitor merupakan website monitoring berbasis
+            IoT yang digunakan untuk memantau parameter pH
+            dan suhu Pupuk Organik Cair (POC) berbahan limbah
+            organik yang digunakan pada bibit kelapa sawit
+            tahap pembibitan awal (pre-nursery).
           </p>
 
           <Link
@@ -36,66 +39,84 @@ function Dashboard() {
         </div>
 
         <div className="hero-visual">
+
           <div className="hero-icon">
-            🌱
+            🌴
           </div>
 
           <div className="floating-card ph-floating">
+
             <span>🧪</span>
+
             <div>
-              <small>Sensor pH</small>
+              <small>Parameter POC</small>
               <strong>pH</strong>
             </div>
+
           </div>
 
           <div className="floating-card temp-floating">
+
             <span>🌡️</span>
+
             <div>
-              <small>Sensor Suhu</small>
+              <small>Parameter POC</small>
               <strong>°C</strong>
             </div>
+
           </div>
+
         </div>
 
       </section>
 
 
-      {/* MENGENAL POC */}
+      {/* =====================================================
+          OBJEK PENELITIAN
+      ===================================================== */}
       <section className="content-section">
 
         <div className="section-heading">
+
           <p className="page-label">
-            PENGENALAN
+            OBJEK PENELITIAN
           </p>
 
           <h2>
-            Mengenal Pupuk Organik Cair
+            POC Limbah Organik untuk Bibit Kelapa Sawit
           </h2>
+
         </div>
+
 
         <div className="explanation-card">
 
           <div className="explanation-icon">
-            🌿
+            🌴
           </div>
 
           <div>
+
             <h3>
-              Apa itu POC?
+              Bibit Kelapa Sawit Tahap Pembibitan Awal
             </h3>
 
             <p>
-              Pupuk Organik Cair atau POC merupakan pupuk
-              berbentuk cair yang berasal dari bahan-bahan
-              organik dan dapat dimanfaatkan untuk membantu
-              menyediakan unsur yang dibutuhkan tanaman.
+              Sistem ini dikembangkan untuk mendukung
+              pemantauan Pupuk Organik Cair (POC) berbahan
+              limbah organik yang digunakan pada bibit
+              kelapa sawit pada tahap pembibitan awal
+              atau pre-nursery.
             </p>
 
             <p>
-              Dalam proses pengelolaannya, kondisi pupuk
-              perlu diperhatikan. Salah satu parameter yang
-              dapat dipantau adalah tingkat pH dan suhu.
+              Pemantauan dilakukan terhadap parameter pH
+              dan suhu POC. Data dari sensor dikirim melalui
+              perangkat IoT dan ditampilkan pada website
+              sehingga kondisi POC dapat dipantau secara
+              lebih mudah.
             </p>
+
           </div>
 
         </div>
@@ -103,12 +124,15 @@ function Dashboard() {
       </section>
 
 
-      {/* SENSOR */}
+      {/* =====================================================
+          PARAMETER YANG DIPANTAU
+      ===================================================== */}
       <section className="content-section">
 
         <div className="section-heading">
+
           <p className="page-label">
-            SENSOR
+            PARAMETER
           </p>
 
           <h2>
@@ -116,15 +140,18 @@ function Dashboard() {
           </h2>
 
           <p>
-            Website ini dirancang untuk menampilkan data
-            dari dua parameter utama.
+            Sistem memantau dua parameter utama pada
+            Pupuk Organik Cair (POC).
           </p>
+
         </div>
 
 
         <div className="sensor-info-grid">
 
-          {/* SENSOR PH */}
+          {/* =================================================
+              PARAMETER PH
+          ================================================= */}
           <div className="sensor-info-card">
 
             <div className="large-info-icon">
@@ -132,25 +159,34 @@ function Dashboard() {
             </div>
 
             <h3>
-              Sensor pH
+              pH POC
             </h3>
 
             <p>
               Sensor pH digunakan untuk mengukur tingkat
-              keasaman atau kebasaan suatu larutan. Pada
-              alat ini, sensor pH digunakan untuk memperoleh
-              nilai pH dari pupuk POC.
+              keasaman atau kebasaan Pupuk Organik Cair.
+              Nilai pH yang diperoleh dari sensor dicatat
+              sebagai data monitoring POC.
             </p>
 
             <div className="info-highlight">
-              <strong>Parameter</strong>
-              <span>Tingkat keasaman POC</span>
+
+              <strong>
+                Parameter
+              </strong>
+
+              <span>
+                Tingkat keasaman POC
+              </span>
+
             </div>
 
           </div>
 
 
-          {/* SENSOR SUHU */}
+          {/* =================================================
+              PARAMETER SUHU
+          ================================================= */}
           <div className="sensor-info-card">
 
             <div className="large-info-icon">
@@ -158,19 +194,26 @@ function Dashboard() {
             </div>
 
             <h3>
-              Sensor Suhu
+              Suhu POC
             </h3>
 
             <p>
               Sensor suhu digunakan untuk mengukur temperatur
-              pupuk POC. Informasi suhu dapat digunakan untuk
-              mengetahui perubahan temperatur selama proses
-              pengelolaan pupuk.
+              Pupuk Organik Cair. Data suhu dicatat bersama
+              dengan data pH untuk membantu pemantauan kondisi
+              POC.
             </p>
 
             <div className="info-highlight">
-              <strong>Parameter</strong>
-              <span>Temperatur POC</span>
+
+              <strong>
+                Parameter
+              </strong>
+
+              <span>
+                Temperatur POC
+              </span>
+
             </div>
 
           </div>
@@ -180,10 +223,63 @@ function Dashboard() {
       </section>
 
 
-      {/* CARA KERJA */}
+      {/* =====================================================
+          KETERKAITAN DENGAN OBJEK PENELITIAN
+      ===================================================== */}
       <section className="content-section">
 
         <div className="section-heading">
+
+          <p className="page-label">
+            PENGGUNAAN
+          </p>
+
+          <h2>
+            POC pada Bibit Kelapa Sawit
+          </h2>
+
+        </div>
+
+
+        <div className="explanation-card">
+
+          <div className="explanation-icon">
+            🌱
+          </div>
+
+          <div>
+
+            <h3>
+              Pembibitan Awal (Pre-Nursery)
+            </h3>
+
+            <p>
+              Pupuk Organik Cair yang menjadi objek monitoring
+              digunakan dalam konteks pemeliharaan bibit kelapa
+              sawit pada tahap pembibitan awal (pre-nursery).
+            </p>
+
+            <p>
+              Website tidak mengukur kondisi bibit secara
+              langsung. Sensor digunakan untuk memperoleh
+              data pH dan suhu dari POC yang kemudian
+              ditampilkan dan disimpan sebagai data monitoring.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CARA KERJA SISTEM
+      ===================================================== */}
+      <section className="content-section">
+
+        <div className="section-heading">
+
           <p className="page-label">
             SISTEM
           </p>
@@ -191,25 +287,32 @@ function Dashboard() {
           <h2>
             Cara Kerja POC Monitor
           </h2>
+
         </div>
 
 
         <div className="workflow">
 
+          {/* SENSOR */}
           <div className="workflow-item">
+
             <div className="workflow-number">
               01
             </div>
 
             <div>
+
               <h3>
                 Sensor
               </h3>
 
               <p>
-                Sensor membaca nilai pH dan suhu pupuk POC.
+                Sensor membaca nilai pH dan suhu
+                dari Pupuk Organik Cair.
               </p>
+
             </div>
+
           </div>
 
 
@@ -218,21 +321,26 @@ function Dashboard() {
           </div>
 
 
+          {/* ESP8266 */}
           <div className="workflow-item">
+
             <div className="workflow-number">
               02
             </div>
 
             <div>
+
               <h3>
                 ESP8266
               </h3>
 
               <p>
-                Perangkat IoT menerima dan mengirimkan
-                data sensor melalui jaringan internet.
+                ESP8266 menerima data sensor dan
+                mengirimkan data melalui jaringan internet.
               </p>
+
             </div>
+
           </div>
 
 
@@ -241,21 +349,26 @@ function Dashboard() {
           </div>
 
 
+          {/* CONVEX */}
           <div className="workflow-item">
+
             <div className="workflow-number">
               03
             </div>
 
             <div>
+
               <h3>
                 Convex
               </h3>
 
               <p>
-                Data sensor disimpan dan dikelola pada
-                database Convex.
+                Data sensor disimpan dan dikelola
+                menggunakan database Convex.
               </p>
+
             </div>
+
           </div>
 
 
@@ -264,20 +377,26 @@ function Dashboard() {
           </div>
 
 
+          {/* WEBSITE */}
           <div className="workflow-item">
+
             <div className="workflow-number">
               04
             </div>
 
             <div>
+
               <h3>
                 Website
               </h3>
 
               <p>
-                Data ditampilkan pada halaman Monitoring.
+                Data pH dan suhu POC ditampilkan
+                pada halaman Monitoring.
               </p>
+
             </div>
+
           </div>
 
         </div>
@@ -285,22 +404,113 @@ function Dashboard() {
       </section>
 
 
-      {/* CTA */}
+      {/* =====================================================
+          INFORMASI SISTEM
+      ===================================================== */}
+      <section className="content-section">
+
+        <div className="section-heading">
+
+          <p className="page-label">
+            INFORMASI SISTEM
+          </p>
+
+          <h2>
+            Fokus Monitoring
+          </h2>
+
+        </div>
+
+
+        <div className="sensor-info-grid">
+
+          <div className="sensor-info-card">
+
+            <div className="large-info-icon">
+              🧪
+            </div>
+
+            <h3>
+              Pupuk Organik Cair
+            </h3>
+
+            <p>
+              POC yang menjadi objek pemantauan merupakan
+              pupuk organik cair berbahan limbah organik.
+              Parameter yang diamati pada sistem adalah
+              pH dan suhu POC.
+            </p>
+
+            <div className="info-highlight">
+
+              <strong>
+                Bahan
+              </strong>
+
+              <span>
+                Limbah organik
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div className="sensor-info-card">
+
+            <div className="large-info-icon">
+              🌴
+            </div>
+
+            <h3>
+              Objek Penggunaan
+            </h3>
+
+            <p>
+              POC digunakan dalam konteks pemeliharaan
+              bibit kelapa sawit pada tahap pembibitan awal
+              atau pre-nursery.
+            </p>
+
+            <div className="info-highlight">
+
+              <strong>
+                Tahap
+              </strong>
+
+              <span>
+                Pembibitan awal (Pre-Nursery)
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
       <section className="monitoring-cta">
 
         <div>
+
           <p className="page-label">
             MONITORING
           </p>
 
           <h2>
-            Lihat Data Sensor
+            Lihat Data Sensor POC
           </h2>
 
           <p>
-            Buka halaman Monitoring untuk melihat output
-            sensor pH dan suhu dari perangkat IoT.
+            Buka halaman Monitoring untuk melihat data
+            pH dan suhu Pupuk Organik Cair dari perangkat IoT.
           </p>
+
         </div>
 
         <Link

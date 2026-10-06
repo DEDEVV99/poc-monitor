@@ -1,4 +1,17 @@
 export function getStatus(value, range) {
+  if (
+    !range ||
+    range.low === null ||
+    range.high === null ||
+    range.low === undefined ||
+    range.high === undefined
+  ) {
+    return {
+      label: "Belum ditetapkan",
+      type: "unknown",
+    };
+  }
+
   if (value < range.low) {
     return {
       label: "Rendah",
@@ -19,42 +32,34 @@ export function getStatus(value, range) {
   };
 }
 
-export function getRecommendation(
-  parameter,
-  status,
-  plantName
-) {
-  // =========================
-  // NORMAL
-  // =========================
+export function getRecommendation(parameter, status) {
+  if (status === "unknown") {
+    if (parameter === "ph") {
+      return "Batas parameter pH POC belum ditetapkan. Nilai sensor tetap dicatat sebagai data monitoring.";
+    }
+
+    return "Batas parameter suhu POC belum ditetapkan. Nilai sensor tetap dicatat sebagai data monitoring.";
+  }
 
   if (status === "normal") {
     if (parameter === "ph") {
-      return `Nilai pH berada dalam rentang parameter yang ditetapkan untuk ${plantName}. Lanjutkan pemantauan secara berkala.`;
+      return "Nilai pH POC berada dalam rentang parameter yang ditetapkan. Lanjutkan pemantauan secara berkala.";
     }
 
-    return `Suhu berada dalam rentang parameter yang ditetapkan untuk ${plantName}. Lanjutkan pemantauan.`;
+    return "Suhu POC berada dalam rentang parameter yang ditetapkan. Lanjutkan pemantauan.";
   }
-
-  // =========================
-  // RENDAH
-  // =========================
 
   if (status === "low") {
     if (parameter === "ph") {
-      return `Nilai pH berada di bawah rentang parameter ${plantName}. Periksa kondisi larutan atau media dan lakukan penyesuaian secara bertahap.`;
+      return "Nilai pH POC berada di bawah rentang parameter. Periksa kondisi POC dan lakukan evaluasi sesuai prosedur penelitian.";
     }
 
-    return `Suhu berada di bawah rentang parameter ${plantName}. Periksa kondisi lingkungan atau penyimpanan POC.`;
+    return "Suhu POC berada di bawah rentang parameter. Periksa kondisi POC dan lingkungan penyimpanannya.";
   }
-
-  // =========================
-  // TINGGI
-  // =========================
 
   if (parameter === "ph") {
-    return `Nilai pH berada di atas rentang parameter ${plantName}. Periksa kondisi larutan atau media dan lakukan penyesuaian secara bertahap.`;
+    return "Nilai pH POC berada di atas rentang parameter. Periksa kondisi POC dan lakukan evaluasi sesuai prosedur penelitian.";
   }
 
-  return `Suhu berada di atas rentang parameter ${plantName}. Periksa kondisi lingkungan atau penyimpanan POC.`;
+  return "Suhu POC berada di atas rentang parameter. Periksa kondisi POC dan lingkungan penyimpanannya.";
 }

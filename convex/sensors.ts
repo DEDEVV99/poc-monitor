@@ -1,10 +1,6 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 
-// =========================
-// DATA SENSOR TERBARU
-// =========================
-
 export const getLatest = query({
   args: {},
 
@@ -15,11 +11,6 @@ export const getLatest = query({
       .first();
   },
 });
-
-
-// =========================
-// RIWAYAT SENSOR
-// =========================
 
 export const getHistory = query({
   args: {
@@ -36,11 +27,6 @@ export const getHistory = query({
   },
 });
 
-
-// =========================
-// TAMBAH DATA SENSOR
-// =========================
-
 export const addReading = mutation({
   args: {
     plant: v.string(),
@@ -53,26 +39,18 @@ export const addReading = mutation({
   handler: async (ctx, args) => {
     const timestamp = Date.now();
 
-    const id = await ctx.db.insert(
-      "sensorReadings",
-      {
-        plant: args.plant,
-        ph: args.ph,
-        temperature: args.temperature,
-        deviceId: args.deviceId,
-        status: args.status,
-        timestamp,
-      }
-    );
+    const id = await ctx.db.insert("sensorReadings", {
+      plant: args.plant,
+      ph: args.ph,
+      temperature: args.temperature,
+      deviceId: args.deviceId,
+      status: args.status,
+      timestamp,
+    });
 
     return id;
   },
 });
-
-
-// =========================
-// HAPUS SATU DATA SENSOR
-// =========================
 
 export const deleteReading = mutation({
   args: {
@@ -88,20 +66,12 @@ export const deleteReading = mutation({
   },
 });
 
-
-// =========================
-// HAPUS BEBERAPA DATA
-// =========================
-
 export const deleteReadings = mutation({
   args: {
-    ids: v.array(
-      v.id("sensorReadings")
-    ),
+    ids: v.array(v.id("sensorReadings")),
   },
 
   handler: async (ctx, args) => {
-
     for (const id of args.ids) {
       await ctx.db.delete(id);
     }

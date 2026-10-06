@@ -1,24 +1,13 @@
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import plantSettings from "../data/plantSettings";
 
-function TestSensor({ selectedPlant }) {
+function TestSensor() {
   const addReading = useMutation(api.sensors.addReading);
 
-  const plant = plantSettings[selectedPlant];
-
-  const normalPh = Number(
-    ((plant.ph.low + plant.ph.high) / 2).toFixed(1)
-  );
-
-  const normalTemperature = Number(
-    ((plant.temperature.low + plant.temperature.high) / 2).toFixed(1)
-  );
-
-  const sendData = async (label, ph, temperature) => {
+  const sendData = async (ph, temperature, label) => {
     try {
       await addReading({
-        plant: selectedPlant,
+        plant: "bibit_sawit_pre_nursery",
         ph,
         temperature,
         deviceId: "ESP8266-POC-01",
@@ -27,10 +16,12 @@ function TestSensor({ selectedPlant }) {
 
       alert(
         `Data berhasil dikirim!\n\n` +
-          `Pengujian: ${label}\n` +
-          `Tanaman: ${plant.icon} ${plant.name}\n` +
+          `Objek: Bibit Kelapa Sawit\n` +
+          `Tahap: Pembibitan Awal (Pre-Nursery)\n` +
+          `POC: Limbah Organik\n\n` +
           `pH: ${ph}\n` +
-          `Suhu: ${temperature} °C`
+          `Suhu: ${temperature} °C\n` +
+          `Jenis data: ${label}`
       );
     } catch (error) {
       console.error(error);
@@ -43,104 +34,47 @@ function TestSensor({ selectedPlant }) {
       <div className="test-sensor-header">
         <div>
           <p className="page-label">MODE PENGUJIAN</p>
-          <h3>Demo Data Sensor</h3>
+          <h3>Data Sensor Dummy</h3>
         </div>
 
-        <span className="test-badge">DEMO</span>
+        <span className="test-badge">TEST</span>
       </div>
 
       <div className="test-plant-info">
-        <span>Tanaman yang dipilih:</span>
+        <span>Objek monitoring:</span>
 
-        <strong>
-          {plant.icon} {plant.name}
-        </strong>
+        <strong>🌴 Bibit Kelapa Sawit</strong>
       </div>
 
       <p className="test-description">
-        Gunakan tombol berikut untuk menguji kondisi pH dan suhu berdasarkan
-        parameter tanaman yang dipilih.
+        Data dummy digunakan untuk menguji proses pengiriman data pH dan suhu
+        POC limbah organik ke database sebelum sensor ESP8266 digunakan.
       </p>
 
-      <div className="demo-section">
-        <h4>Data Normal</h4>
+      <div className="test-buttons">
+        <button
+          onClick={() => sendData(5.5, 28.0, "Data Pengujian 1")}
+        >
+          Data 1
+        </button>
 
         <button
-          className="demo-button normal"
-          onClick={() =>
-            sendData(
-              "Data Normal",
-              normalPh,
-              normalTemperature
-            )
-          }
+          onClick={() => sendData(6.0, 29.0, "Data Pengujian 2")}
         >
-          ✓ Normal
+          Data 2
         </button>
-      </div>
 
-      <div className="demo-section">
-        <h4>Uji pH</h4>
+        <button
+          onClick={() => sendData(6.5, 30.0, "Data Pengujian 3")}
+        >
+          Data 3
+        </button>
 
-        <div className="demo-buttons">
-          <button
-            className="demo-button low"
-            onClick={() =>
-              sendData(
-                "pH Rendah",
-                Number((plant.ph.low - 0.5).toFixed(1)),
-                normalTemperature
-              )
-            }
-          >
-            ↓ pH Rendah
-          </button>
-
-          <button
-            className="demo-button high"
-            onClick={() =>
-              sendData(
-                "pH Tinggi",
-                Number((plant.ph.high + 0.5).toFixed(1)),
-                normalTemperature
-              )
-            }
-          >
-            ↑ pH Tinggi
-          </button>
-        </div>
-      </div>
-
-      <div className="demo-section">
-        <h4>Uji Suhu</h4>
-
-        <div className="demo-buttons">
-          <button
-            className="demo-button low"
-            onClick={() =>
-              sendData(
-                "Suhu Rendah",
-                normalPh,
-                Number((plant.temperature.low - 2).toFixed(1))
-              )
-            }
-          >
-            ↓ Suhu Rendah
-          </button>
-
-          <button
-            className="demo-button high"
-            onClick={() =>
-              sendData(
-                "Suhu Tinggi",
-                normalPh,
-                Number((plant.temperature.high + 2).toFixed(1))
-              )
-            }
-          >
-            ↑ Suhu Tinggi
-          </button>
-        </div>
+        <button
+          onClick={() => sendData(4.5, 35.0, "Data Pengujian 4")}
+        >
+          Data 4
+        </button>
       </div>
     </div>
   );
