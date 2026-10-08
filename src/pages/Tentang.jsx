@@ -1,4 +1,5 @@
 import adminImage from "../images/admin.jpg";
+
 function Tentang() {
   return (
     <div className="page tentang-page">
@@ -204,7 +205,7 @@ function Tentang() {
           </p>
 
           <h2>
-            Bibit Kelapa Sawit
+            Tanaman Kacang Panjang
           </h2>
 
         </div>
@@ -213,27 +214,33 @@ function Tentang() {
         <div className="explanation-card">
 
           <div className="explanation-icon">
-            🌴
+            🌱
           </div>
 
           <div>
 
             <h3>
-              Pembibitan Awal (Pre-Nursery)
+              Kacang Panjang
             </h3>
 
             <p>
-              Penelitian ini menggunakan bibit kelapa sawit
-              pada tahap pembibitan awal atau pre-nursery
-              sebagai konteks penelitian.
+              Tanaman kacang panjang digunakan sebagai konteks
+              penelitian dalam pengembangan sistem monitoring
+              Pupuk Organik Cair.
             </p>
 
             <p>
-              Informasi mengenai bibit kelapa sawit digunakan
-              sebagai konteks penelitian, sedangkan sistem
-              monitoring yang dikembangkan berfokus pada
+              Informasi mengenai tanaman kacang panjang
+              digunakan sebagai konteks penelitian, sedangkan
+              sistem monitoring yang dikembangkan berfokus pada
               pengukuran parameter pH dan suhu Pupuk Organik
               Cair.
+            </p>
+
+            <p>
+              Sistem tidak mengukur parameter tanaman kacang
+              panjang secara langsung. Parameter yang dipantau
+              oleh sistem adalah pH dan suhu Pupuk Organik Cair.
             </p>
 
           </div>
@@ -589,6 +596,12 @@ function Tentang() {
             </p>
 
             <p>
+              Tanaman kacang panjang merupakan konteks
+              penelitian, sedangkan objek yang diukur oleh
+              sensor adalah Pupuk Organik Cair.
+            </p>
+
+            <p>
               Sistem menerima data dari sensor, mengirimkan
               data melalui ESP8266, menyimpan data, kemudian
               menampilkan hasil monitoring pada website.
@@ -599,11 +612,19 @@ function Tentang() {
               POC dan tidak melakukan pengolahan POC.
             </p>
 
+            <p>
+              Sistem juga tidak melakukan pengukuran langsung
+              terhadap pertumbuhan maupun parameter tanaman
+              kacang panjang.
+            </p>
+
           </div>
 
         </div>
 
       </section>
+
+
       {/* =====================================================
           PROFILE DEVELOPER
       ===================================================== */}
@@ -631,13 +652,15 @@ function Tentang() {
 
         <div className="developer-profile">
 
-          {/* FOTO / AVATAR */}
+          {/* FOTO DEVELOPER */}
           <div className="developer-avatar">
-  <img
-    src={adminImage}
-    alt="Delon Dede Afdilah"
-  />
-</div>
+
+            <img
+              src={adminImage}
+              alt="Delon Dede Afdilah"
+            />
+
+          </div>
 
 
           {/* INFORMASI DEVELOPER */}
@@ -657,8 +680,32 @@ function Tentang() {
               <div className="developer-detail-item">
 
                 <div>
-                  <strong>NIM</strong>
-                  <p>2308100013</p>
+
+                  <strong>
+                    NIM
+                  </strong>
+
+                  <p>
+                    2308100013
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="developer-detail-item">
+
+                <div>
+
+                  <strong>
+                    Program Studi
+                  </strong>
+
+                  <p>
+                    Teknologi Informasi
+                  </p>
+
                 </div>
 
               </div>
@@ -668,18 +715,15 @@ function Tentang() {
 
 
                 <div>
-                  <strong>Program Studi</strong>
-                  <p>Teknologi Informasi</p>
-                </div>
 
-              </div>
+                  <strong>
+                    Universitas
+                  </strong>
 
+                  <p>
+                    Universitas Labuhanbatu
+                  </p>
 
-              <div className="developer-detail-item">
-
-                <div>
-                  <strong>Universitas</strong>
-                  <p>Universitas Labuhanbatu</p>
                 </div>
 
               </div>
@@ -689,12 +733,17 @@ function Tentang() {
 
 
                 <div>
-                  <strong>Penelitian</strong>
+
+                  <strong>
+                    Penelitian
+                  </strong>
+
                   <p>
                     Rancang Bangun Sistem Monitoring
                     Parameter Suhu dan pH Pupuk Organik
                     Cair Berbasis IoT dan Web
                   </p>
+
                 </div>
 
               </div>
@@ -706,6 +755,7 @@ function Tentang() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           PENUTUP
@@ -733,7 +783,7 @@ function Tentang() {
       </section>
 
     </div>
-      );
-  }
+  );
+}
 
 export default Tentang;

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function Dashboard() {
   return (
     <div className="page dashboard-page">
@@ -7,64 +5,30 @@ function Dashboard() {
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="hero-section">
+      <section className="content-section">
 
-        <div className="hero-content">
+        <div className="section-heading">
 
           <p className="page-label">
             POC MONITOR
           </p>
 
           <h1>
-            Monitoring POC untuk
-            Bibit Kelapa Sawit
+            Monitoring POC untuk Tanaman Kacang Panjang
           </h1>
 
-          <p className="hero-description">
-            POC Monitor merupakan website monitoring berbasis
-            IoT yang digunakan untuk memantau parameter pH
-            dan suhu Pupuk Organik Cair (POC) berbahan limbah
-            organik yang digunakan pada bibit kelapa sawit
-            tahap pembibitan awal (pre-nursery).
+          <p>
+            POC Monitor merupakan sistem monitoring berbasis
+            Internet of Things (IoT) dan web yang digunakan
+            untuk memantau parameter pH dan suhu Pupuk
+            Organik Cair (POC).
           </p>
 
-          <Link
-            to="/monitoring"
-            className="hero-button"
-          >
-            Lihat Monitoring
-            <span>→</span>
-          </Link>
-
-        </div>
-
-        <div className="hero-visual">
-
-          <div className="hero-icon">
-            🌴
-          </div>
-
-          <div className="floating-card ph-floating">
-
-            <span>🧪</span>
-
-            <div>
-              <small>Parameter POC</small>
-              <strong>pH</strong>
-            </div>
-
-          </div>
-
-          <div className="floating-card temp-floating">
-
-            <span>🌡️</span>
-
-            <div>
-              <small>Parameter POC</small>
-              <strong>°C</strong>
-            </div>
-
-          </div>
+          <p>
+            Pupuk Organik Cair yang digunakan dalam penelitian
+            berbahan dasar limbah organik dan digunakan dalam
+            konteks penelitian tanaman kacang panjang.
+          </p>
 
         </div>
 
@@ -83,39 +47,78 @@ function Dashboard() {
           </p>
 
           <h2>
-            POC Limbah Organik untuk Bibit Kelapa Sawit
+            Tanaman Kacang Panjang
           </h2>
+
+          <p>
+            Tanaman kacang panjang digunakan sebagai konteks
+            penelitian dalam pengembangan sistem monitoring
+            Pupuk Organik Cair.
+          </p>
 
         </div>
 
 
-        <div className="explanation-card">
+        <div className="sensor-info-grid">
 
-          <div className="explanation-icon">
-            🌴
-          </div>
+          <div className="sensor-info-card">
 
-          <div>
+            <div className="large-info-icon">
+              🌱
+            </div>
 
             <h3>
-              Bibit Kelapa Sawit Tahap Pembibitan Awal
+              Kacang Panjang
             </h3>
 
             <p>
-              Sistem ini dikembangkan untuk mendukung
-              pemantauan Pupuk Organik Cair (POC) berbahan
-              limbah organik yang digunakan pada bibit
-              kelapa sawit pada tahap pembibitan awal
-              atau pre-nursery.
+              Kacang panjang menjadi objek tanaman dalam
+              konteks penelitian. Sistem yang dikembangkan
+              tidak mengukur parameter tanaman secara langsung.
             </p>
 
+            <div className="info-highlight">
+
+              <strong>
+                Objek
+              </strong>
+
+              <span>
+                Tanaman Kacang Panjang
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div className="sensor-info-card">
+
+            <div className="large-info-icon">
+              🧪
+            </div>
+
+            <h3>
+              Pupuk Organik Cair
+            </h3>
+
             <p>
-              Pemantauan dilakukan terhadap parameter pH
-              dan suhu POC. Data dari sensor dikirim melalui
-              perangkat IoT dan ditampilkan pada website
-              sehingga kondisi POC dapat dipantau secara
-              lebih mudah.
+              Pupuk Organik Cair (POC) berbahan dasar limbah
+              organik digunakan sebagai objek yang parameter
+              pH dan suhunya dipantau oleh sistem.
             </p>
+
+            <div className="info-highlight">
+
+              <strong>
+                Parameter
+              </strong>
+
+              <span>
+                pH dan suhu POC
+              </span>
+
+            </div>
 
           </div>
 
@@ -125,23 +128,23 @@ function Dashboard() {
 
 
       {/* =====================================================
-          PARAMETER YANG DIPANTAU
+          PARAMETER MONITORING
       ===================================================== */}
       <section className="content-section">
 
         <div className="section-heading">
 
           <p className="page-label">
-            PARAMETER
+            PARAMETER MONITORING
           </p>
 
           <h2>
-            Apa yang Dipantau?
+            Parameter yang Dipantau
           </h2>
 
           <p>
-            Sistem memantau dua parameter utama pada
-            Pupuk Organik Cair (POC).
+            Sistem memantau dua parameter utama dari Pupuk
+            Organik Cair, yaitu pH dan suhu.
           </p>
 
         </div>
@@ -149,9 +152,7 @@ function Dashboard() {
 
         <div className="sensor-info-grid">
 
-          {/* =================================================
-              PARAMETER PH
-          ================================================= */}
+          {/* pH */}
           <div className="sensor-info-card">
 
             <div className="large-info-icon">
@@ -163,20 +164,19 @@ function Dashboard() {
             </h3>
 
             <p>
-              Sensor pH digunakan untuk mengukur tingkat
-              keasaman atau kebasaan Pupuk Organik Cair.
-              Nilai pH yang diperoleh dari sensor dicatat
-              sebagai data monitoring POC.
+              Sensor pH digunakan untuk memperoleh nilai
+              tingkat keasaman atau kebasaan dari Pupuk
+              Organik Cair.
             </p>
 
             <div className="info-highlight">
 
               <strong>
-                Parameter
+                Batas Parameter
               </strong>
 
               <span>
-                Tingkat keasaman POC
+                Belum ditetapkan
               </span>
 
             </div>
@@ -184,9 +184,7 @@ function Dashboard() {
           </div>
 
 
-          {/* =================================================
-              PARAMETER SUHU
-          ================================================= */}
+          {/* SUHU */}
           <div className="sensor-info-card">
 
             <div className="large-info-icon">
@@ -198,73 +196,21 @@ function Dashboard() {
             </h3>
 
             <p>
-              Sensor suhu digunakan untuk mengukur temperatur
-              Pupuk Organik Cair. Data suhu dicatat bersama
-              dengan data pH untuk membantu pemantauan kondisi
-              POC.
+              Sensor suhu digunakan untuk memperoleh nilai
+              temperatur dari Pupuk Organik Cair.
             </p>
 
             <div className="info-highlight">
 
               <strong>
-                Parameter
+                Batas Parameter
               </strong>
 
               <span>
-                Temperatur POC
+                Belum ditetapkan
               </span>
 
             </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          KETERKAITAN DENGAN OBJEK PENELITIAN
-      ===================================================== */}
-      <section className="content-section">
-
-        <div className="section-heading">
-
-          <p className="page-label">
-            PENGGUNAAN
-          </p>
-
-          <h2>
-            POC pada Bibit Kelapa Sawit
-          </h2>
-
-        </div>
-
-
-        <div className="explanation-card">
-
-          <div className="explanation-icon">
-            🌱
-          </div>
-
-          <div>
-
-            <h3>
-              Pembibitan Awal (Pre-Nursery)
-            </h3>
-
-            <p>
-              Pupuk Organik Cair yang menjadi objek monitoring
-              digunakan dalam konteks pemeliharaan bibit kelapa
-              sawit pada tahap pembibitan awal (pre-nursery).
-            </p>
-
-            <p>
-              Website tidak mengukur kondisi bibit secara
-              langsung. Sensor digunakan untuk memperoleh
-              data pH dan suhu dari POC yang kemudian
-              ditampilkan dan disimpan sebagai data monitoring.
-            </p>
 
           </div>
 
@@ -285,15 +231,20 @@ function Dashboard() {
           </p>
 
           <h2>
-            Cara Kerja POC Monitor
+            Cara Kerja Sistem
           </h2>
+
+          <p>
+            Data hasil pembacaan sensor dikirimkan melalui
+            ESP8266 dan ditampilkan pada website.
+          </p>
 
         </div>
 
 
         <div className="workflow">
 
-          {/* SENSOR */}
+          {/* 01 */}
           <div className="workflow-item">
 
             <div className="workflow-number">
@@ -308,7 +259,7 @@ function Dashboard() {
 
               <p>
                 Sensor membaca nilai pH dan suhu
-                dari Pupuk Organik Cair.
+                Pupuk Organik Cair.
               </p>
 
             </div>
@@ -321,7 +272,7 @@ function Dashboard() {
           </div>
 
 
-          {/* ESP8266 */}
+          {/* 02 */}
           <div className="workflow-item">
 
             <div className="workflow-number">
@@ -335,8 +286,8 @@ function Dashboard() {
               </h3>
 
               <p>
-                ESP8266 menerima data sensor dan
-                mengirimkan data melalui jaringan internet.
+                ESP8266 menerima data hasil pembacaan
+                sensor dan mengirimkan data melalui jaringan.
               </p>
 
             </div>
@@ -349,7 +300,7 @@ function Dashboard() {
           </div>
 
 
-          {/* CONVEX */}
+          {/* 03 */}
           <div className="workflow-item">
 
             <div className="workflow-number">
@@ -363,8 +314,8 @@ function Dashboard() {
               </h3>
 
               <p>
-                Data sensor disimpan dan dikelola
-                menggunakan database Convex.
+                Data hasil pembacaan sensor disimpan dan
+                dikelola pada database.
               </p>
 
             </div>
@@ -377,7 +328,7 @@ function Dashboard() {
           </div>
 
 
-          {/* WEBSITE */}
+          {/* 04 */}
           <div className="workflow-item">
 
             <div className="workflow-number">
@@ -391,8 +342,8 @@ function Dashboard() {
               </h3>
 
               <p>
-                Data pH dan suhu POC ditampilkan
-                pada halaman Monitoring.
+                Data pH dan suhu POC ditampilkan melalui
+                website POC Monitor.
               </p>
 
             </div>
@@ -416,73 +367,42 @@ function Dashboard() {
           </p>
 
           <h2>
-            Fokus Monitoring
+            Monitoring Berbasis IoT
           </h2>
 
         </div>
 
 
-        <div className="sensor-info-grid">
+        <div className="explanation-card">
 
-          <div className="sensor-info-card">
-
-            <div className="large-info-icon">
-              🧪
-            </div>
-
-            <h3>
-              Pupuk Organik Cair
-            </h3>
-
-            <p>
-              POC yang menjadi objek pemantauan merupakan
-              pupuk organik cair berbahan limbah organik.
-              Parameter yang diamati pada sistem adalah
-              pH dan suhu POC.
-            </p>
-
-            <div className="info-highlight">
-
-              <strong>
-                Bahan
-              </strong>
-
-              <span>
-                Limbah organik
-              </span>
-
-            </div>
-
+          <div className="explanation-icon">
+            📡
           </div>
 
-
-          <div className="sensor-info-card">
-
-            <div className="large-info-icon">
-              🌴
-            </div>
+          <div>
 
             <h3>
-              Objek Penggunaan
+              Monitoring Data POC
             </h3>
 
             <p>
-              POC digunakan dalam konteks pemeliharaan
-              bibit kelapa sawit pada tahap pembibitan awal
-              atau pre-nursery.
+              POC Monitor menggunakan teknologi Internet of
+              Things untuk memperoleh data pH dan suhu dari
+              Pupuk Organik Cair melalui sensor yang terhubung
+              dengan ESP8266.
             </p>
 
-            <div className="info-highlight">
+            <p>
+              Data kemudian dikirimkan ke database dan
+              ditampilkan melalui website sehingga data hasil
+              pembacaan dapat dipantau secara terpusat.
+            </p>
 
-              <strong>
-                Tahap
-              </strong>
-
-              <span>
-                Pembibitan awal (Pre-Nursery)
-              </span>
-
-            </div>
+            <p>
+              Sistem berfokus pada proses monitoring parameter
+              POC dan tidak melakukan pengukuran parameter
+              tanaman secara langsung.
+            </p>
 
           </div>
 
@@ -492,33 +412,75 @@ function Dashboard() {
 
 
       {/* =====================================================
-          CTA
+          BATASAN SISTEM
+      ===================================================== */}
+      <section className="content-section">
+
+        <div className="explanation-card">
+
+          <div className="explanation-icon">
+            ℹ️
+          </div>
+
+          <div>
+
+            <h2>
+              Fokus Sistem
+            </h2>
+
+            <p>
+              Sistem POC Monitor berfokus pada pemantauan
+              parameter pH dan suhu Pupuk Organik Cair.
+            </p>
+
+            <p>
+              Tanaman kacang panjang merupakan konteks
+              penelitian, sedangkan objek yang diukur oleh
+              sensor adalah Pupuk Organik Cair.
+            </p>
+
+            <p>
+              Sistem tidak mengukur pH tanaman, suhu tanaman,
+              pertumbuhan tanaman, maupun parameter tanaman
+              lainnya secara langsung.
+            </p>
+
+            <p>
+              Batas parameter pH dan suhu akan ditentukan
+              berdasarkan hasil kajian dan sumber ilmiah yang
+              relevan dengan Pupuk Organik Cair dalam konteks
+              penelitian kacang panjang.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CALL TO ACTION
       ===================================================== */}
       <section className="monitoring-cta">
 
         <div>
 
           <p className="page-label">
-            MONITORING
+            POC MONITOR
           </p>
 
           <h2>
-            Lihat Data Sensor POC
+            Monitoring POC Berbasis IoT dan Web
           </h2>
 
           <p>
-            Buka halaman Monitoring untuk melihat data
-            pH dan suhu Pupuk Organik Cair dari perangkat IoT.
+            Sistem dirancang untuk memudahkan pemantauan
+            data pH dan suhu Pupuk Organik Cair melalui
+            perangkat IoT dan website.
           </p>
 
         </div>
-
-        <Link
-          to="/monitoring"
-          className="hero-button"
-        >
-          Buka Monitoring →
-        </Link>
 
       </section>
 

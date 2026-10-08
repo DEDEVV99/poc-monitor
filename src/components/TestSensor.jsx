@@ -7,7 +7,7 @@ function TestSensor() {
   const sendData = async (ph, temperature, label) => {
     try {
       await addReading({
-        plant: "bibit_sawit_pre_nursery",
+        plant: "kacang_panjang",
         ph,
         temperature,
         deviceId: "ESP8266-POC-01",
@@ -16,11 +16,10 @@ function TestSensor() {
 
       alert(
         `Data berhasil dikirim!\n\n` +
-          `Objek: Bibit Kelapa Sawit\n` +
-          `Tahap: Pembibitan Awal (Pre-Nursery)\n` +
+          `Objek: Tanaman Kacang Panjang\n` +
           `POC: Limbah Organik\n\n` +
-          `pH: ${ph}\n` +
-          `Suhu: ${temperature} °C\n` +
+          `pH POC: ${ph}\n` +
+          `Suhu POC: ${temperature} °C\n` +
           `Jenis data: ${label}`
       );
     } catch (error) {
@@ -43,7 +42,7 @@ function TestSensor() {
       <div className="test-plant-info">
         <span>Objek monitoring:</span>
 
-        <strong>🌴 Bibit Kelapa Sawit</strong>
+        <strong>🌱 Tanaman Kacang Panjang</strong>
       </div>
 
       <p className="test-description">

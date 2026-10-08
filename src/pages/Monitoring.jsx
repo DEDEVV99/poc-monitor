@@ -1,13 +1,8 @@
 import { useState } from "react";
-
 import { useQuery, useMutation } from "convex/react";
-
 import { api } from "../../convex/_generated/api";
-
 import TestSensor from "../components/TestSensor";
-
 import pocSettings from "../data/plantSettings";
-
 import {
   getStatus,
   getRecommendation,
@@ -15,6 +10,7 @@ import {
 
 
 function Monitoring() {
+
   // =========================
   // DATA YANG DIPILIH
   // =========================
@@ -80,7 +76,7 @@ function Monitoring() {
 
 
   // =========================
-  // REKOMENDASI
+  // INFORMASI PARAMETER
   // =========================
 
   const phRecommendation =
@@ -106,6 +102,7 @@ function Monitoring() {
   // =========================
 
   const formatDate = (timestamp) => {
+
     if (!timestamp) {
       return "-";
     }
@@ -126,24 +123,21 @@ function Monitoring() {
   // FORMAT NAMA OBJEK
   // =========================
 
-  const getObjectName = (plantId) => {
-    if (
-      plantId === "bibit_sawit_pre_nursery"
-    ) {
-      return "🌴 Bibit Kelapa Sawit";
-    }
+const getObjectName = (plantId) => {
+  if (plantId === "kacang_panjang") {
+    return "🌱 Kacang Panjang";
+  }
 
-    // Untuk data lama yang masih tersimpan
-    if (plantId === "kangkung") {
-      return "🌱 Data Lama - Kangkung";
-    }
+  if (plantId === "kangkung") {
+    return "Data Lama - Kangkung";
+  }
 
-    if (plantId === "terong") {
-      return "🍆 Data Lama - Terong";
-    }
+  if (plantId === "terong") {
+    return "Data Lama - Terong";
+  }
 
-    return "🌴 Bibit Kelapa Sawit";
-  };
+  return "🌱 Kacang Panjang";
+};
 
 
   // =========================
@@ -151,16 +145,17 @@ function Monitoring() {
   // =========================
 
   const getHistorySettings = (plantId) => {
-    // Data baru penelitian
+
+    // Data penelitian saat ini
     if (
-      plantId ===
-      "bibit_sawit_pre_nursery"
+      plantId === "kacang_panjang"
     ) {
       return poc;
     }
 
-    // Data lama tidak dihitung menggunakan
-    // parameter tanaman lama.
+
+    // Data lama tidak menggunakan
+    // parameter penelitian saat ini
     return null;
   };
 
@@ -181,8 +176,11 @@ function Monitoring() {
   // =========================
 
   const handleSelectHistory = (id) => {
+
     setSelectedHistory((current) => {
+
       if (current.includes(id)) {
+
         return current.filter(
           (item) => item !== id
         );
@@ -201,14 +199,19 @@ function Monitoring() {
   // =========================
 
   const handleSelectAll = () => {
+
     if (!history) {
       return;
     }
 
+
     if (isAllSelected) {
+
       setSelectedHistory([]);
+
       return;
     }
+
 
     setSelectedHistory(
       history.map(
@@ -223,33 +226,43 @@ function Monitoring() {
   // =========================
 
   const handleDeleteSelected = async () => {
+
     if (
       selectedHistory.length === 0
     ) {
       return;
     }
 
+
     const confirmed =
       window.confirm(
         `Apakah Anda yakin ingin menghapus ${selectedHistory.length} data riwayat?\n\nData yang sudah dihapus tidak dapat dikembalikan.`
       );
 
+
     if (!confirmed) {
       return;
     }
 
+
     try {
+
       await deleteReadings({
         ids: selectedHistory,
       });
 
+
       setSelectedHistory([]);
+
 
       alert(
         "Data riwayat berhasil dihapus."
       );
+
     } catch (error) {
+
       console.error(error);
+
 
       alert(
         "Gagal menghapus data riwayat."
@@ -267,7 +280,9 @@ function Monitoring() {
 
 
   return (
+
     <div className="monitoring-page">
+
 
       {/* =================================================
           HEADER
@@ -281,17 +296,18 @@ function Monitoring() {
             MONITORING
           </p>
 
+
           <h1>
             Monitoring POC
           </h1>
+
 
           <p className="page-description">
             Pantau parameter pH dan suhu
             Pupuk Organik Cair (POC)
             berbahan limbah organik
-            yang digunakan pada bibit
-            kelapa sawit tahap pembibitan
-            awal (pre-nursery).
+            dalam konteks penelitian
+            tanaman kacang panjang.
           </p>
 
         </div>
@@ -311,13 +327,14 @@ function Monitoring() {
             OBJEK PENELITIAN
           </p>
 
+
           <h3>
-            🌴 Bibit Kelapa Sawit
+            🌱 Tanaman Kacang Panjang
           </h3>
 
+
           <p>
-            Tahap pembibitan awal
-            (pre-nursery)
+            Konteks penelitian
           </p>
 
         </div>
@@ -346,11 +363,13 @@ function Monitoring() {
             🧪
           </span>
 
+
           <div>
 
             <p className="page-label">
               PARAMETER MONITORING
             </p>
+
 
             <h3>
               POC Limbah Organik
@@ -363,11 +382,13 @@ function Monitoring() {
 
         <div className="parameter-grid">
 
+
           <div className="parameter-item">
 
             <span>
               pH POC
             </span>
+
 
             <strong>
               Belum ditetapkan
@@ -382,11 +403,13 @@ function Monitoring() {
               Suhu POC
             </span>
 
+
             <strong>
               Belum ditetapkan
             </strong>
 
           </div>
+
 
         </div>
 
@@ -406,6 +429,7 @@ function Monitoring() {
             <p className="page-label">
               DATA SENSOR
             </p>
+
 
             <h2>
               Kondisi Saat Ini
@@ -447,9 +471,11 @@ function Monitoring() {
               📡
             </div>
 
+
             <h3>
               Belum ada data sensor
             </h3>
+
 
             <p>
               Gunakan tombol pengujian
@@ -462,6 +488,7 @@ function Monitoring() {
         ) : (
 
           <div className="sensor-grid">
+
 
             {/* =========================
                 PH
@@ -476,6 +503,7 @@ function Monitoring() {
                   <span className="sensor-name">
                     pH POC
                   </span>
+
 
                   <p>
                     Tingkat keasaman
@@ -526,6 +554,7 @@ function Monitoring() {
                     Suhu POC
                   </span>
 
+
                   <p>
                     Temperatur Pupuk
                     Organik Cair
@@ -564,6 +593,7 @@ function Monitoring() {
 
             </div>
 
+
           </div>
 
         )}
@@ -584,11 +614,13 @@ function Monitoring() {
             <span className="online-dot">
             </span>
 
+
             <div>
 
               <p className="page-label">
                 STATUS PERANGKAT
               </p>
+
 
               <h3>
                 {latestData.deviceId}
@@ -614,7 +646,7 @@ function Monitoring() {
 
 
       {/* =================================================
-          REKOMENDASI / INFORMASI
+          INFORMASI PARAMETER
       ================================================= */}
 
       {latestData && (
@@ -628,6 +660,7 @@ function Monitoring() {
               <p className="page-label">
                 INFORMASI
               </p>
+
 
               <h2>
                 Kondisi Parameter
@@ -645,6 +678,7 @@ function Monitoring() {
 
           <div className="recommendation-list">
 
+
             {/* PH */}
 
             <div className="recommendation-item">
@@ -654,6 +688,7 @@ function Monitoring() {
                 <strong>
                   pH POC
                 </strong>
+
 
                 <span
                   className={`status-badge ${phStatus.type}`}
@@ -681,6 +716,7 @@ function Monitoring() {
                   Suhu POC
                 </strong>
 
+
                 <span
                   className={`status-badge ${temperatureStatus.type}`}
                 >
@@ -695,6 +731,7 @@ function Monitoring() {
               </p>
 
             </div>
+
 
           </div>
 
@@ -724,6 +761,7 @@ function Monitoring() {
               RIWAYAT DATA
             </p>
 
+
             <h2>
               Monitoring Sebelumnya
             </h2>
@@ -734,6 +772,7 @@ function Monitoring() {
 
 
         <div className="history-card">
+
 
           {/* =========================
               LOADING
@@ -749,6 +788,7 @@ function Monitoring() {
 
           ) : history.length === 0 ? (
 
+
             /* =========================
                TIDAK ADA DATA
             ========================= */
@@ -759,6 +799,7 @@ function Monitoring() {
                 📋
               </div>
 
+
               <p>
                 Belum ada riwayat data.
               </p>
@@ -768,6 +809,7 @@ function Monitoring() {
           ) : (
 
             <>
+
 
               {/* =========================
                   AKSI RIWAYAT
@@ -786,6 +828,7 @@ function Monitoring() {
                       handleSelectAll
                     }
                   />
+
 
                   <span>
                     Pilih Semua
@@ -842,29 +885,36 @@ function Monitoring() {
                         Pilih
                       </th>
 
+
                       <th>
                         Waktu
                       </th>
+
 
                       <th>
                         Objek
                       </th>
 
+
                       <th>
                         pH
                       </th>
+
 
                       <th>
                         Status pH
                       </th>
 
+
                       <th>
                         Suhu
                       </th>
 
+
                       <th>
                         Status Suhu
                       </th>
+
 
                       <th>
                         Perangkat
@@ -879,6 +929,7 @@ function Monitoring() {
 
                     {history.map(
                       (item) => {
+
 
                         // =========================
                         // PARAMETER RIWAYAT
@@ -935,6 +986,7 @@ function Monitoring() {
                           <tr
                             key={item._id}
                           >
+
 
                             {/* CHECKBOX */}
 
@@ -1055,6 +1107,7 @@ function Monitoring() {
 
                             </td>
 
+
                           </tr>
 
                         );
@@ -1075,6 +1128,7 @@ function Monitoring() {
         </div>
 
       </div>
+
 
     </div>
   );
