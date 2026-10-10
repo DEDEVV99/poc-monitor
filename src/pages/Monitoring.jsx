@@ -281,7 +281,7 @@ const getObjectName = (plantId) => {
 
   return (
 
-    <div className="monitoring-page">
+    <div className="sensor-card poc-interactive-card poc-animate-up">
 
 
       {/* =================================================
@@ -390,9 +390,9 @@ const getObjectName = (plantId) => {
             </span>
 
 
-            <strong>
-              Belum ditetapkan
-            </strong>
+<strong>
+  {poc.ph.low}–{poc.ph.high}
+</strong>
 
           </div>
 
@@ -404,10 +404,9 @@ const getObjectName = (plantId) => {
             </span>
 
 
-            <strong>
-              Belum ditetapkan
-            </strong>
-
+<strong>
+  {poc.temperature.low}–{poc.temperature.high} °C
+</strong>
           </div>
 
 
@@ -494,7 +493,7 @@ const getObjectName = (plantId) => {
                 PH
             ========================= */}
 
-            <div className="sensor-card">
+<div className="sensor-card poc-interactive-card poc-animate-up poc-delay-1">
 
               <div className="sensor-card-top">
 
@@ -533,7 +532,7 @@ const getObjectName = (plantId) => {
 
                 Parameter POC:
                 {" "}
-                Belum ditetapkan
+                {poc.ph.low}–{poc.ph.high}
 
               </div>
 
@@ -544,7 +543,7 @@ const getObjectName = (plantId) => {
                 SUHU
             ========================= */}
 
-            <div className="sensor-card">
+<div className="sensor-card poc-interactive-card poc-animate-up poc-delay-2">
 
               <div className="sensor-card-top">
 
@@ -587,8 +586,7 @@ const getObjectName = (plantId) => {
 
                 Parameter POC:
                 {" "}
-                Belum ditetapkan
-
+{poc.temperature.low}–{poc.temperature.high} °C
               </div>
 
             </div>
@@ -981,11 +979,11 @@ const getObjectName = (plantId) => {
                         }
 
 
-                        return (
-
-                          <tr
-                            key={item._id}
-                          >
+return (
+  <tr
+    key={item._id}
+    className="history-row-animated"
+  >
 
 
                             {/* CHECKBOX */}

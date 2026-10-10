@@ -2,40 +2,32 @@ import adminImage from "../images/admin.jpg";
 
 function Tentang() {
   return (
-    <div className="page tentang-page">
+    <div className="page tentang-page poc-animate-fade">
 
       {/* =====================================================
           HEADER
       ===================================================== */}
-      <section className="content-section">
-
-        <div className="section-heading">
-
-          <p className="page-label">
+<section className="content-section poc-animate-up">
+  <div className="section-heading">
+              <p className="page-label">
             TENTANG
           </p>
-
           <h1>
             Tentang POC Monitor
           </h1>
-
           <p>
             POC Monitor merupakan website monitoring berbasis
             Internet of Things (IoT) yang digunakan untuk
             memantau parameter pH dan suhu pada Pupuk Organik
             Cair (POC).
           </p>
-
         </div>
-
       </section>
-
-
       {/* =====================================================
           TUJUAN SISTEM
       ===================================================== */}
-      <section className="content-section">
 
+<section className="content-section poc-animate-up poc-delay-2">
         <div className="explanation-card">
 
           <div className="explanation-icon">
@@ -99,8 +91,8 @@ function Tentang() {
       {/* =====================================================
           OBJEK MONITORING
       ===================================================== */}
-      <section className="content-section">
 
+<section className="content-section poc-animate-up poc-delay-2">
         <div className="section-heading">
 
           <p className="page-label">
@@ -123,7 +115,9 @@ function Tentang() {
         <div className="sensor-info-grid">
 
           {/* POC */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               🧪
@@ -157,7 +151,9 @@ function Tentang() {
 
 
           {/* PARAMETER */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               📊
@@ -196,7 +192,8 @@ function Tentang() {
       {/* =====================================================
           OBJEK PENELITIAN
       ===================================================== */}
-      <section className="content-section">
+
+<section className="content-section poc-animate-up poc-delay-1">
 
         <div className="section-heading">
 
@@ -253,7 +250,8 @@ function Tentang() {
       {/* =====================================================
           PARAMETER YANG DIPANTAU
       ===================================================== */}
-      <section className="content-section">
+
+<section className="content-section poc-animate-up poc-delay-2">
 
         <div className="section-heading">
 
@@ -271,7 +269,9 @@ function Tentang() {
         <div className="sensor-info-grid">
 
           {/* PH */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               🧪
@@ -303,7 +303,9 @@ function Tentang() {
 
 
           {/* SUHU */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               🌡️
@@ -340,7 +342,8 @@ function Tentang() {
       {/* =====================================================
           TEKNOLOGI
       ===================================================== */}
-      <section className="content-section">
+
+<section className="content-section poc-animate-up poc-delay-3">
 
         <div className="section-heading">
 
@@ -363,7 +366,9 @@ function Tentang() {
         <div className="sensor-info-grid">
 
           {/* SENSOR PH */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               🧪
@@ -382,7 +387,9 @@ function Tentang() {
 
 
           {/* DS18B20 */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               🌡️
@@ -401,7 +408,9 @@ function Tentang() {
 
 
           {/* ESP8266 */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               📡
@@ -420,7 +429,9 @@ function Tentang() {
 
 
           {/* CONVEX */}
-          <div className="sensor-info-card">
+
+<div className="sensor-info-card poc-interactive-card poc-animate-up">
+
 
             <div className="large-info-icon">
               ☁️
@@ -445,8 +456,8 @@ function Tentang() {
       {/* =====================================================
           ALUR SISTEM
       ===================================================== */}
-      <section className="content-section">
 
+<section className="content-section poc-animate-up poc-delay-1">
         <div className="section-heading">
 
           <p className="page-label">
@@ -576,7 +587,8 @@ function Tentang() {
       {/* =====================================================
           BATASAN SISTEM
       ===================================================== */}
-      <section className="content-section">
+
+<section className="content-section poc-animate-up poc-delay-2">
 
         <div className="explanation-card">
 
@@ -628,8 +640,8 @@ function Tentang() {
       {/* =====================================================
           PROFILE DEVELOPER
       ===================================================== */}
-      <section className="content-section">
 
+<section className="content-section poc-animate-up poc-delay-3">
         <div className="section-heading">
 
           <p className="page-label">
@@ -650,8 +662,7 @@ function Tentang() {
         </div>
 
 
-        <div className="developer-profile">
-
+<div className="developer-profile poc-interactive-card poc-animate-up poc-delay-2">
           {/* FOTO DEVELOPER */}
           <div className="developer-avatar">
 
@@ -760,28 +771,22 @@ function Tentang() {
       {/* =====================================================
           PENUTUP
       ===================================================== */}
-      <section className="monitoring-cta">
+<section className="monitoring-cta poc-animate-up poc-delay-4">
 
         <div>
-
           <p className="page-label">
             POC MONITOR
           </p>
-
           <h2>
             Monitoring POC Berbasis IoT dan Web
           </h2>
-
           <p>
             Sistem dirancang untuk memudahkan pemantauan
             data pH dan suhu Pupuk Organik Cair melalui
             perangkat IoT dan website.
           </p>
-
         </div>
-
       </section>
-
     </div>
   );
 }

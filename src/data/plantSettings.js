@@ -11,13 +11,13 @@ const pocSettings = {
     "Monitoring parameter pH dan suhu Pupuk Organik Cair (POC) berbahan limbah organik dalam konteks penelitian tanaman kacang panjang.",
 
   ph: {
-    low: null,
-    high: null,
+    low: 4,
+    high: 9,
   },
 
   temperature: {
-    low: null,
-    high: null,
+    low: 25,
+    high: 30,
   },
 };
 

@@ -1748,47 +1748,101 @@ td {
 
   transform: translateY(-1px);
 }
-/* =========================
-   PLANT SELECTOR
-========================= */
+/* =========================================
+   TEST SENSOR - DEMO BUTTONS RESPONSIVE
+========================================= */
 
-.plant-selector-card {
-  margin-top: 25px;
-  padding: 22px;
-  background: #ffffff;
-  border: 1px solid #edf0ed;
-  border-radius: 18px;
+.test-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.test-buttons button {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
 
-.plant-selector-info h3 {
-  margin-top: 5px;
-  font-size: 18px;
-}
+  width: 100%;
+  min-width: 0;
+  min-height: 76px;
+  padding: 10px 12px;
 
-.plant-selector-info p:last-child {
-  margin-top: 6px;
-  color: #8b929b;
+  border: 1px solid #dce9df;
+  border-radius: 12px;
+  background: #f7fbf8;
+  color: #334155;
+
+  font-family: inherit;
   font-size: 12px;
-}
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
 
-.plant-select-wrapper select {
-  min-width: 190px;
-  padding: 12px 14px;
-  border: 1px solid #dfe5df;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #303630;
-  font-size: 13px;
   cursor: pointer;
-  outline: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.plant-select-wrapper select:focus {
-  border-color: #69a875;
+.test-buttons button strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #166534;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.test-buttons button span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.test-buttons button:hover {
+  background: #edf7ef;
+  border-color: #86c99b;
+  box-shadow: 0 4px 10px rgba(22, 101, 52, 0.08);
+  transform: translateY(-1px);
+}
+
+.test-buttons button:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.35);
+  outline-offset: 2px;
+}
+
+.test-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .test-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .test-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .test-buttons button {
+    min-height: 72px;
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .test-buttons button strong {
+    font-size: 13px;
+  }
 }
 
 
@@ -3495,4 +3549,691 @@ td {
     height: 100px;
   }
 
+}
+/* =========================================
+   FINAL OVERRIDE - TEST SENSOR DEMO GRID
+========================================= */
+
+.test-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 16px !important;
+}
+
+.test-buttons button {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 4px !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 76px !important;
+  padding: 10px 12px !important;
+
+  text-align: left !important;
+  white-space: normal !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .test-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .test-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .test-buttons button {
+    min-height: 72px !important;
+    padding: 9px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .test-buttons button strong {
+    font-size: 13px !important;
+  }
+}
+/* =========================================
+   POC MONITOR - GLOBAL ANIMATIONS
+   Ringan, responsif, dan tanpa grafik animasi
+========================================= */
+
+/* Animasi masuk untuk elemen yang diberi class */
+@keyframes pocFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pocSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pocSoftPop {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Class animasi yang dapat digunakan lintas halaman */
+.poc-animate-fade {
+  animation: pocFadeIn 450ms ease-out both;
+}
+
+.poc-animate-up {
+  animation: pocSlideUp 500ms ease-out both;
+}
+
+.poc-animate-pop {
+  animation: pocSoftPop 400ms ease-out both;
+}
+
+/* Kemunculan bertahap */
+.poc-delay-1 {
+  animation-delay: 80ms;
+}
+
+.poc-delay-2 {
+  animation-delay: 160ms;
+}
+
+.poc-delay-3 {
+  animation-delay: 240ms;
+}
+
+.poc-delay-4 {
+  animation-delay: 320ms;
+}
+
+/* Transisi kartu: gunakan pada elemen yang memang berupa kartu */
+.poc-interactive-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .poc-interactive-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(20, 60, 35, 0.08);
+  }
+}
+
+/* Transisi tombol tanpa mengubah warna dasarnya */
+button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Fokus keyboard yang jelas */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(34, 139, 75, 0.4);
+  outline-offset: 3px;
+}
+
+/* Menghormati pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   DASHBOARD - LAYOUT DAN VISUAL
+========================================= */
+
+.dashboard-page {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.dashboard-page .content-section {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-page .section-heading {
+  max-width: 820px;
+  min-width: 0;
+}
+
+.dashboard-page .section-heading h2,
+.dashboard-page .section-heading p,
+.dashboard-page .sensor-info-card h3,
+.dashboard-page .sensor-info-card p {
+  overflow-wrap: anywhere;
+}
+
+/* Hero: teks dan visual berada dalam dua kolom */
+.dashboard-page .dashboard-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid #e4eee6;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(176, 224, 185, 0.3), transparent 35%),
+    linear-gradient(135deg, #ffffff 0%, #f2f8f3 100%);
+}
+
+.dashboard-page .dashboard-hero-copy {
+  min-width: 0;
+}
+
+.dashboard-page .dashboard-hero-copy h1 {
+  max-width: 680px;
+  margin: 12px 0 20px;
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-page .dashboard-hero-copy p {
+  max-width: 650px;
+  line-height: 1.75;
+}
+
+.dashboard-page .dashboard-hero-description {
+  color: #344054;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+}
+
+.dashboard-page .dashboard-hero-note {
+  margin-top: 14px;
+  color: #748176;
+  font-size: 0.94rem;
+}
+
+.dashboard-page .dashboard-hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 20px;
+  min-width: 0;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(231, 245, 233, 0.7);
+}
+
+.dashboard-page .dashboard-hero-icon {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(112px, 13vw, 168px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 36px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(35, 95, 51, 0.12);
+  font-size: clamp(4rem, 7vw, 6.5rem);
+  animation: pocSoftPop 500ms ease-out both;
+}
+
+.dashboard-page .dashboard-hero-caption {
+  z-index: 1;
+  display: grid;
+  gap: 5px;
+  text-align: center;
+}
+
+.dashboard-page .dashboard-hero-caption span {
+  color: #66846b;
+  font-size: 0.85rem;
+}
+
+.dashboard-page .dashboard-hero-caption strong {
+  color: #23352a;
+  font-size: 1.15rem;
+}
+
+.dashboard-page .dashboard-hero-orbit {
+  position: absolute;
+  width: 220px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(76, 145, 88, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dashboard-page .dashboard-orbit-one {
+  width: 260px;
+}
+
+.dashboard-page .dashboard-orbit-two {
+  width: 340px;
+}
+
+/* Kartu informasi */
+.dashboard-page .sensor-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-page .sensor-info-card {
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-page .large-info-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 22px;
+  border-radius: 22px;
+  background: #edf8ef;
+  font-size: 2.5rem;
+}
+
+.dashboard-page .info-highlight {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  min-width: 0;
+}
+
+.dashboard-page .info-highlight span {
+  overflow-wrap: anywhere;
+}
+
+.dashboard-page .dashboard-threshold-note {
+  max-width: 900px;
+  margin: 16px 0 0;
+  color: #718075;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* Alur kerja */
+.dashboard-page .workflow {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  min-width: 0;
+}
+
+.dashboard-page .workflow-item {
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-page .workflow-item h3,
+.dashboard-page .workflow-item p {
+  overflow-wrap: anywhere;
+}
+
+.dashboard-page .workflow-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #76a47c;
+  font-size: 1.4rem;
+}
+
+/* Kartu penjelasan */
+.dashboard-page .explanation-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-page .explanation-card > div:last-child {
+  min-width: 0;
+}
+
+.dashboard-page .explanation-card h2,
+.dashboard-page .explanation-card h3,
+.dashboard-page .explanation-card p {
+  overflow-wrap: anywhere;
+}
+
+.dashboard-page .monitoring-cta {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.dashboard-page .monitoring-cta > div {
+  min-width: 0;
+}
+
+.dashboard-page .monitoring-cta h2,
+.dashboard-page .monitoring-cta p {
+  overflow-wrap: anywhere;
+}
+
+/* Responsif tablet */
+@media (max-width: 900px) {
+  .dashboard-page .dashboard-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-page .dashboard-hero-visual {
+    min-height: 260px;
+  }
+
+  .dashboard-page .workflow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .dashboard-page .workflow-arrow {
+    display: none;
+  }
+}
+
+/* Responsif HP */
+@media (max-width: 600px) {
+  .dashboard-page .dashboard-hero {
+    gap: 24px;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .dashboard-page .dashboard-hero-copy h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .dashboard-page .dashboard-hero-visual {
+    min-height: 230px;
+  }
+
+  .dashboard-page .sensor-info-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .dashboard-page .workflow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-page .large-info-icon {
+    width: 66px;
+    height: 66px;
+    font-size: 2.1rem;
+  }
+
+  .dashboard-page .info-highlight {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Perbaikan label section agar tidak terpotong */
+.dashboard-page .section-heading .page-label {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  width: max-content;
+  max-width: 100%;
+}
+
+/* =========================================
+   POC MONITOR - MONITORING DESIGN
+========================================= */
+
+.monitoring-page {
+  width: 100%;
+  min-width: 0;
+  animation: pocFadeIn 450ms ease-out both;
+}
+
+.monitoring-page .page-header,
+.monitoring-page .plant-selector-card,
+.monitoring-page .parameter-card,
+.monitoring-page .monitoring-section,
+.monitoring-page .device-status-card,
+.monitoring-page .recommendation-card,
+.monitoring-page .history-section {
+  min-width: 0;
+  animation: pocSlideUp 480ms ease-out both;
+}
+
+.monitoring-page .plant-selector-card {
+  animation-delay: 60ms;
+}
+
+.monitoring-page .parameter-card {
+  animation-delay: 100ms;
+}
+
+.monitoring-page .monitoring-section {
+  animation-delay: 140ms;
+}
+
+.monitoring-page .device-status-card {
+  animation-delay: 180ms;
+}
+
+.monitoring-page .recommendation-card {
+  animation-delay: 220ms;
+}
+
+.monitoring-page .history-section {
+  animation-delay: 260ms;
+}
+
+/* Kartu sensor */
+.monitoring-page .sensor-card {
+  min-width: 0;
+  border: 1px solid #e6eee8;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .monitoring-page .sensor-card:hover {
+    transform: translateY(-3px);
+    border-color: #c7e4ce;
+    box-shadow: 0 12px 28px rgba(36, 88, 48, 0.09);
+  }
+}
+
+.monitoring-page .sensor-value {
+  font-variant-numeric: tabular-nums;
+  transition: color 200ms ease;
+}
+
+.monitoring-page .status-badge {
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.monitoring-page .sensor-range {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Kartu objek dan rentang parameter */
+.monitoring-page .plant-selector-card,
+.monitoring-page .parameter-card,
+.monitoring-page .device-status-card,
+.monitoring-page .recommendation-card,
+.monitoring-page .history-card {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.monitoring-page .parameter-item {
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .monitoring-page .parameter-item:hover {
+    background-color: #f0f8f1;
+    transform: translateY(-2px);
+  }
+}
+
+/* Informasi kondisi parameter */
+.monitoring-page .recommendation-item {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.monitoring-page .recommendation-item p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Data dummy */
+.monitoring-page .test-sensor-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.monitoring-page .test-buttons button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .monitoring-page .test-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(36, 88, 48, 0.09);
+  }
+}
+
+.monitoring-page .test-buttons button:active {
+  transform: scale(0.98);
+}
+
+/* Tabel riwayat */
+.monitoring-page .history-card {
+  overflow: hidden;
+}
+
+.monitoring-page .history-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.monitoring-page .history-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.monitoring-page .history-table tbody tr {
+  transition: background-color 180ms ease;
+}
+
+.monitoring-page .history-row-animated {
+  animation: pocSlideUp 300ms ease-out both;
+}
+
+.monitoring-page .history-table tbody tr:hover {
+  background-color: #f4f9f5;
+}
+
+.monitoring-page .history-table th {
+  white-space: nowrap;
+}
+
+.monitoring-page .history-table td {
+  vertical-align: middle;
+}
+
+/* Fokus keyboard */
+.monitoring-page button:focus-visible,
+.monitoring-page input:focus-visible {
+  outline: 3px solid rgba(34, 139, 75, 0.35);
+  outline-offset: 3px;
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .monitoring-page .page-description {
+    line-height: 1.7;
+  }
+
+  .monitoring-page .sensor-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .monitoring-page .history-table {
+    min-width: 760px;
+  }
+
+  .monitoring-page .history-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .monitoring-page .last-update {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+  .monitoring-page *,
+  .monitoring-page *::before,
+  .monitoring-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
