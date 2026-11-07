@@ -4237,3 +4237,1849 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================================
+   MONITOR SAMPAH ORGANIK
+   PENYESUAIAN TEMA WARNA
+========================================================= */
+
+:root {
+  --organic-primary: #2e8b57;
+  --organic-primary-dark: #246b45;
+  --organic-primary-light: #e8f5e9;
+  --organic-accent: #66bb6a;
+
+  --organic-background: #f5f8f5;
+  --organic-card: #ffffff;
+
+  --organic-text: #263238;
+  --organic-text-secondary: #7b8794;
+
+  --organic-border: #e3ece5;
+}
+
+/* =========================================================
+   LATAR BELAKANG
+========================================================= */
+
+html,
+body {
+  background: var(--organic-background);
+  color: var(--organic-text);
+}
+
+.main-content {
+  background: var(--organic-background);
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid var(--organic-border);
+}
+
+.brand {
+  border-bottom: 1px solid var(--organic-border);
+}
+
+.brand-icon {
+  background: var(--organic-primary-light);
+}
+
+.brand h2 {
+  color: var(--organic-text);
+}
+
+.brand span {
+  color: var(--organic-text-secondary);
+}
+
+/* =========================================================
+   MENU NAVIGASI
+========================================================= */
+
+.navigation a {
+  color: #64748b;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.navigation a:hover {
+  background: #f0f8f1;
+  color: var(--organic-primary);
+}
+
+.navigation a.active {
+  background: var(--organic-primary-light);
+  color: var(--organic-primary-dark);
+  font-weight: 600;
+}
+
+/* =========================================================
+   LABEL DAN JUDUL
+========================================================= */
+
+.page-label {
+  color: var(--organic-primary);
+}
+
+.page-header h1,
+.dashboard-page h1,
+.dashboard-page h2,
+.dashboard-page h3,
+.tentang-page h1,
+.tentang-page h2,
+.tentang-page h3 {
+  color: var(--organic-text);
+}
+
+.page-description {
+  color: var(--organic-text-secondary);
+}
+
+/* =========================================================
+   KARTU INFORMASI
+========================================================= */
+
+.sensor-card,
+.sensor-info-card,
+.explanation-card,
+.history-card,
+.parameter-card,
+.plant-selector-card,
+.device-status-card,
+.recommendation-card {
+  background: var(--organic-card);
+  border-color: var(--organic-border);
+}
+
+/* =========================================================
+   KARTU PARAMETER
+========================================================= */
+
+.parameter-card {
+  background: #f8fcf8;
+  border-color: #e2eee4;
+}
+
+.parameter-item {
+  background: #ffffff;
+  border-color: var(--organic-border);
+}
+
+.parameter-item:hover {
+  background: var(--organic-primary-light);
+}
+
+/* =========================================================
+   IKON INFORMASI
+========================================================= */
+
+.large-info-icon {
+  background: var(--organic-primary-light);
+}
+
+.explanation-icon {
+  background: var(--organic-primary-light);
+}
+
+/* =========================================================
+   HIGHLIGHT INFORMASI
+========================================================= */
+
+.info-highlight {
+  background: #f3faf4;
+  border-color: #e0eee2;
+}
+
+.info-highlight strong {
+  color: var(--organic-primary-dark);
+}
+
+/* =========================================================
+   TOMBOL
+========================================================= */
+
+button {
+  font-family: inherit;
+}
+
+.demo-button.normal {
+  background: #e8f5e9;
+  color: #2e8b57;
+}
+
+.demo-button.normal:hover {
+  background: #d6edda;
+}
+
+.demo-button.low {
+  background: #fff8e1;
+  color: #b7791f;
+}
+
+.demo-button.high {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* =========================================================
+   TABEL RIWAYAT
+========================================================= */
+
+.history-table th {
+  background: #f3faf4;
+  color: var(--organic-primary-dark);
+}
+
+.history-table td {
+  border-bottom-color: var(--organic-border);
+}
+
+.history-table tbody tr:hover {
+  background: #f5faf6;
+}
+
+.history-plant {
+  color: var(--organic-primary-dark);
+}
+
+/* =========================================================
+   STATUS PERANGKAT
+========================================================= */
+
+.online-dot {
+  background: #4caf50;
+}
+
+.device-status-text {
+  color: var(--organic-primary);
+}
+
+/* =========================================================
+   DASHBOARD HERO
+========================================================= */
+
+.dashboard-page .dashboard-hero {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(176, 224, 185, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f2f8f3 100%
+    );
+
+  border-color: var(--organic-border);
+}
+
+.dashboard-page .dashboard-hero-icon {
+  background: var(--organic-primary-light);
+}
+
+/* =========================================================
+   INFORMASI PENUTUP
+========================================================= */
+
+.monitoring-cta {
+  background: linear-gradient(
+    135deg,
+    #2e8b57,
+    #246b45
+  );
+
+  border-color: #2e8b57;
+}
+
+.monitoring-cta h2,
+.monitoring-cta p,
+.monitoring-cta .page-label {
+  color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+  .main-content {
+    background: var(--organic-background);
+  }
+
+  .dashboard-page .dashboard-hero {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .monitoring-cta {
+    padding: 24px;
+    border-radius: 20px;
+  }
+}
+
+/* ==========================================
+   TEMA BARU - MONITOR SAMPAH ORGANIK
+   PENYESUAIAN WARNA YANG LEBIH TERLIHAT
+========================================== */
+
+/* Latar utama aplikasi */
+html,
+body,
+.main-content {
+  background-color: #eef5ef !important;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #ffffff !important;
+  border-right: 1px solid #d4e5d7 !important;
+}
+
+/* Menu navigasi */
+.navigation a {
+  color: #536b5b !important;
+}
+
+.navigation a:hover {
+  background-color: #dff0e3 !important;
+  color: #1f7544 !important;
+}
+
+.navigation a.active {
+  background-color: #cce8d3 !important;
+  color: #176b3a !important;
+  font-weight: 700 !important;
+}
+
+/* Label bagian */
+.page-label {
+  color: #21834b !important;
+}
+
+/* Kartu informasi */
+.sensor-card,
+.sensor-info-card,
+.explanation-card,
+.history-card,
+.device-status-card,
+.recommendation-card {
+  background-color: #ffffff !important;
+  border-color: #d8e8dc !important;
+}
+
+/* Panel parameter */
+.parameter-card {
+  background-color: #e5f3e8 !important;
+  border-color: #c6e3ce !important;
+}
+
+/* Highlight informasi */
+.info-highlight {
+  background-color: #e6f4e9 !important;
+  border-color: #cce5d2 !important;
+}
+
+/* Hero Dashboard */
+.dashboard-page .dashboard-hero {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #e2f3e6 55%,
+      #ccebd5 100%
+    ) !important;
+
+  border-color: #c8e4cf !important;
+}
+
+/* Ikon informasi */
+.large-info-icon,
+.explanation-icon {
+  background-color: #d9efdf !important;
+}
+
+/* Tabel riwayat */
+.history-table th {
+  background-color: #dff0e3 !important;
+  color: #176b3a !important;
+}
+
+.history-table tbody tr:hover {
+  background-color: #eef8f0 !important;
+}
+
+/* Tombol hapus */
+.delete-history-button {
+  background-color: #c62828;
+  color: #ffffff;
+}
+
+/* Bagian penutup */
+.monitoring-cta {
+  background: linear-gradient(
+    135deg,
+    #21834b 0%,
+    #145c35 100%
+  ) !important;
+
+  border-color: #21834b !important;
+}
+
+.monitoring-cta h2,
+.monitoring-cta p,
+.monitoring-cta .page-label {
+  color: #ffffff !important;
+}
+
+/* ==================================================
+   MONITOR SAMPAH ORGANIK
+   TEMA INDIGO MODERN
+   GLOBAL COLOR OVERRIDE
+================================================== */
+
+:root {
+  --theme-primary: #5267D8;
+  --theme-primary-dark: #4054C4;
+  --theme-primary-light: #E8ECFF;
+
+  --theme-purple: #8B5CF6;
+
+  --theme-background: #F3F5FA;
+  --theme-surface: #FFFFFF;
+
+  --theme-border: #E2E6F0;
+
+  --theme-heading: #202A44;
+  --theme-text: #4B556B;
+  --theme-muted: #778198;
+}
+
+/* =========================
+   GLOBAL BACKGROUND
+========================= */
+
+body {
+  background-color: var(--theme-background) !important;
+  color: var(--theme-text);
+}
+
+.main-content {
+  background-color: var(--theme-background) !important;
+}
+
+.dashboard-page,
+.monitoring-page,
+.tentang-page {
+  background-color: var(--theme-background) !important;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  background-color: #FFFFFF !important;
+  border-color: var(--theme-border) !important;
+}
+
+.brand {
+  border-color: var(--theme-border) !important;
+}
+
+.brand-icon {
+  background-color: var(--theme-primary-light) !important;
+}
+
+.brand-icon {
+  color: var(--theme-primary) !important;
+}
+
+.brand h2 {
+  color: var(--theme-heading) !important;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation a {
+  color: var(--theme-muted) !important;
+}
+
+.navigation a:hover {
+  background-color: #F1F3FF !important;
+  color: var(--theme-primary) !important;
+}
+
+.navigation a.active {
+  background-color: var(--theme-primary-light) !important;
+  color: var(--theme-primary-dark) !important;
+  font-weight: 600;
+}
+
+/* =========================
+   LABEL & HEADING
+========================= */
+
+.page-label {
+  color: var(--theme-primary) !important;
+}
+
+.section-heading h2,
+.dashboard-page h2,
+.monitoring-page h2,
+.tentang-page h2 {
+  color: var(--theme-heading);
+}
+
+.dashboard-page h3,
+.monitoring-page h3,
+.tentang-page h3 {
+  color: var(--theme-heading);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.sensor-info-card,
+.explanation-card,
+.sensor-card,
+.parameter-card,
+.recommendation-card,
+.history-card {
+  background-color: #FFFFFF !important;
+  border-color: var(--theme-border) !important;
+}
+
+/* =========================
+   ICON BACKGROUND
+========================= */
+
+.large-info-icon,
+.sensor-icon,
+.explanation-icon {
+  background-color: var(--theme-primary-light) !important;
+}
+
+/* =========================
+   INFO HIGHLIGHT
+========================= */
+
+.info-highlight {
+  background-color: #F1F3FF !important;
+  border-color: #DCE2FF !important;
+}
+
+.info-highlight strong {
+  color: var(--theme-primary-dark) !important;
+}
+
+/* =========================
+   HERO DASHBOARD
+========================= */
+
+.dashboard-hero {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(139, 92, 246, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFFFF 0%,
+      #EEF1FF 100%
+    ) !important;
+
+  border-color: #E0E5FF !important;
+}
+
+.dashboard-hero-orbit {
+  border-color: rgba(82, 103, 216, 0.18) !important;
+}
+
+.dashboard-hero-icon {
+  background-color: #E8ECFF !important;
+  border-color: #D7DEFF !important;
+}
+
+/* =========================
+   WORKFLOW
+========================= */
+
+.workflow-item {
+  background-color: #FFFFFF !important;
+  border-color: var(--theme-border) !important;
+}
+
+.workflow-number {
+  background-color: var(--theme-primary-light) !important;
+  color: var(--theme-primary-dark) !important;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.monitoring-cta {
+  background:
+    linear-gradient(
+      135deg,
+      #E8ECFF 0%,
+      #F0EAFE 100%
+    ) !important;
+
+  border-color: #DFE3FF !important;
+}
+
+.monitoring-cta h2 {
+  color: var(--theme-heading) !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button,
+.primary-button,
+.demo-button,
+.submit-button {
+  transition: all 0.2s ease;
+}
+
+.primary-button,
+.submit-button {
+  background-color: var(--theme-primary) !important;
+  color: #FFFFFF !important;
+}
+
+.primary-button:hover,
+.submit-button:hover {
+  background-color: var(--theme-primary-dark) !important;
+}
+
+/* =========================
+   STATUS NORMAL
+========================= */
+
+.status-normal {
+  background-color: #E8ECFF !important;
+  color: #4054C4 !important;
+}
+
+/* =========================
+   BORDER
+========================= */
+
+.sidebar-footer,
+.connection-status,
+.sensor-info-card,
+.explanation-card {
+  border-color: var(--theme-border);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .main-content {
+    background-color: var(--theme-background) !important;
+  }
+
+  .dashboard-page,
+  .monitoring-page,
+  .tentang-page {
+    background-color: var(--theme-background) !important;
+  }
+}
+/* =====================================
+   MODERN ICON DASHBOARD
+===================================== */
+
+.large-info-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+
+  background: #e8ecff;
+  border: 1px solid #dce3ff;
+
+  box-shadow: 0 5px 15px rgba(82, 103, 216, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.poc-interactive-card:hover .large-info-icon {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 20px rgba(82, 103, 216, 0.15);
+}
+
+/* Warna ikon */
+
+.icon-organic {
+  background: #e8ecff;
+}
+
+.icon-poc {
+  background: #f0eaff;
+}
+
+.icon-ph {
+  background: #e6f0ff;
+}
+
+.icon-temperature {
+  background: #fff0e8;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .large-info-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    border-radius: 16px;
+  }
+}
+/* =========================================
+   MONITORING PAGE - INDIGO MODERN THEME
+========================================= */
+
+/* Header Pemantauan */
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  color: #202849;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  margin: 8px 0 12px;
+}
+
+.page-description {
+  color: #68728b;
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+/* Objek Pemantauan */
+.plant-selector-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  margin-bottom: 25px;
+
+  background: linear-gradient(135deg, #ffffff, #f1f3ff);
+  border: 1px solid #e0e5ff;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.06);
+}
+
+.plant-selector-info h3 {
+  color: #303d79;
+  font-size: 21px;
+  margin: 10px 0;
+}
+
+.plant-selector-info p {
+  color: #737d96;
+  line-height: 1.7;
+}
+
+.plant-select-wrapper {
+  padding: 13px 20px;
+  background: #e8ecff;
+  color: #5267d8;
+  border-radius: 14px;
+  border: 1px solid #d8dfff;
+}
+
+/* Parameter Acuan */
+.parameter-card {
+  background: #ffffff;
+  border: 1px solid #e5e9f5;
+  border-radius: 22px;
+  padding: 25px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.05);
+}
+
+.parameter-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.plant-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 27px;
+  background: #e8ecff;
+  border-radius: 16px;
+}
+
+.parameter-title h3 {
+  color: #28345f;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.parameter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.parameter-item {
+  padding: 20px;
+  background: #f5f6ff;
+  border: 1px solid #e5e9ff;
+  border-radius: 17px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.parameter-item span {
+  color: #737d96;
+  font-size: 14px;
+}
+
+.parameter-item strong {
+  color: #5267d8;
+  font-size: 27px;
+  font-weight: 750;
+}
+
+/* Kondisi POC Saat Ini */
+.monitoring-section {
+  margin-bottom: 30px;
+}
+
+.monitoring-section .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.monitoring-section .section-heading h2 {
+  color: #28345f;
+  font-size: 24px;
+  margin-top: 7px;
+}
+
+.last-update {
+  color: #7b849b;
+  font-size: 12px;
+  background: #f0f2ff;
+  padding: 9px 13px;
+  border-radius: 10px;
+}
+
+/* Kartu Sensor */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.sensor-grid .sensor-card {
+  background: #ffffff;
+  border: 1px solid #e3e8f5;
+  border-radius: 23px;
+  padding: 25px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.06);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.sensor-grid .sensor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(65, 83, 160, 0.12);
+}
+
+.sensor-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.sensor-name {
+  color: #28345f;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sensor-card-top p {
+  color: #818aa1;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+.sensor-value {
+  color: #5267d8;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 28px 0 15px;
+}
+
+.sensor-value .unit {
+  color: #8b5cf6;
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.sensor-range {
+  padding: 12px 14px;
+  color: #69748d;
+  background: #f4f5ff;
+  border: 1px solid #e8ebff;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* Status Sensor */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 13px;
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-badge.normal {
+  background: #e8ecff;
+  color: #5267d8;
+  border: 1px solid #d7dfff;
+}
+
+.status-badge.low,
+.status-badge.rendah {
+  background: #fff0e8;
+  color: #d97732;
+  border: 1px solid #ffdfc9;
+}
+
+.status-badge.high,
+.status-badge.tinggi {
+  background: #fce8f0;
+  color: #c44578;
+  border: 1px solid #f5d1e2;
+}
+
+.status-badge.unknown {
+  background: #f0f1f5;
+  color: #72798a;
+  border: 1px solid #e1e3e9;
+}
+
+/* Status Perangkat */
+.device-status-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 22px 25px;
+  margin-bottom: 30px;
+
+  background: #ffffff;
+  border: 1px solid #e3e8f5;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.05);
+}
+
+.device-status-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.online-dot {
+  width: 13px;
+  height: 13px;
+  background: #5267d8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #e8ecff;
+}
+
+.device-status-info h3 {
+  color: #28345f;
+  margin-top: 6px;
+}
+
+.device-status-text {
+  padding: 10px 16px;
+  color: #5267d8;
+  background: #e8ecff;
+  border: 1px solid #d7dfff;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Informasi dan Rekomendasi */
+.recommendation-card {
+  background: #ffffff;
+  border: 1px solid #e3e8f5;
+  border-radius: 22px;
+  padding: 25px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.05);
+}
+
+.recommendation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.recommendation-header h2 {
+  color: #28345f;
+  font-size: 23px;
+  margin-top: 7px;
+}
+
+.recommendation-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f0eaff;
+  border-radius: 16px;
+  font-size: 25px;
+}
+
+.recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.recommendation-item {
+  padding: 20px;
+  background: #f7f8ff;
+  border: 1px solid #e7eaff;
+  border-radius: 17px;
+}
+
+.recommendation-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.recommendation-item-title strong {
+  color: #303d79;
+  font-size: 16px;
+}
+
+.recommendation-item p {
+  color: #707b94;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Riwayat Pemantauan */
+.history-section {
+  margin-top: 35px;
+}
+
+.history-section .section-heading {
+  margin-bottom: 20px;
+}
+
+.history-section .section-heading h2 {
+  color: #28345f;
+  font-size: 24px;
+  margin-top: 7px;
+}
+
+.history-card {
+  background: #ffffff;
+  border: 1px solid #e3e8f5;
+  border-radius: 22px;
+  padding: 22px;
+
+  box-shadow: 0 8px 25px rgba(65, 83, 160, 0.05);
+}
+
+/* Aksi Riwayat */
+.history-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #596680;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select-all input,
+.checkbox-column input {
+  accent-color: #5267d8;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.delete-history-button {
+  padding: 11px 17px;
+
+  color: #c44578;
+  background: #fce8f0;
+  border: 1px solid #f5d1e2;
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.delete-history-button:hover:not(:disabled) {
+  background: #f8d8e7;
+  transform: translateY(-2px);
+}
+
+.delete-history-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Tabel Riwayat */
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e7eaf5;
+  border-radius: 15px;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.history-table thead {
+  background: #f0f2ff;
+}
+
+.history-table th {
+  padding: 16px 14px;
+  color: #46558f;
+
+  font-size: 12px;
+  font-weight: 750;
+  text-align: left;
+  white-space: nowrap;
+
+  border-bottom: 1px solid #e1e5ff;
+}
+
+.history-table td {
+  padding: 15px 14px;
+  color: #69748d;
+  font-size: 13px;
+
+  border-bottom: 1px solid #edf0f7;
+  white-space: nowrap;
+}
+
+.history-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+  background: #f7f8ff;
+}
+
+.history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.history-table td strong {
+  color: #303d79;
+}
+
+.history-plant {
+  color: #5267d8;
+  background: #e8ecff;
+  padding: 7px 10px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.checkbox-column {
+  text-align: center !important;
+}
+
+/* Tampilan Data Kosong */
+.empty-sensor-card,
+.history-empty {
+  padding: 35px 20px;
+  text-align: center;
+
+  background: #f7f8ff;
+  border: 1px dashed #d9dfff;
+  border-radius: 18px;
+}
+
+.empty-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.empty-sensor-card h3 {
+  color: #303d79;
+  margin-bottom: 10px;
+}
+
+.empty-sensor-card p,
+.history-empty p {
+  color: #7b849b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Responsive Tablet */
+@media (max-width: 900px) {
+  .sensor-grid,
+  .recommendation-list {
+    grid-template-columns: 1fr;
+  }
+
+  .parameter-grid {
+    gap: 12px;
+  }
+
+  .sensor-value {
+    font-size: 44px;
+  }
+}
+
+/* Responsive Smartphone */
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .plant-selector-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .plant-select-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .parameter-card,
+  .recommendation-card,
+  .history-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .parameter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .parameter-item strong {
+    font-size: 24px;
+  }
+
+  .monitoring-section .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .last-update {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .sensor-grid .sensor-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .sensor-value {
+    font-size: 42px;
+  }
+
+  .device-status-card {
+    padding: 18px;
+  }
+
+  .recommendation-item {
+    padding: 16px;
+  }
+
+  .history-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-history-button {
+    width: 100%;
+  }
+
+  .history-section .section-heading h2 {
+    font-size: 21px;
+  }
+}
+/* =========================================
+   FIX KONTRAS HALAMAN TENTANG
+========================================= */
+
+/* Bagian penutup */
+.monitoring-cta {
+  background: linear-gradient(
+    135deg,
+    #e8ecff 0%,
+    #f0eaff 100%
+  ) !important;
+
+  border: 1px solid #dce3ff;
+  border-radius: 22px;
+  padding: 30px;
+}
+
+/* Judul penutup */
+.monitoring-cta h2 {
+  color: #28345f !important;
+  font-weight: 750;
+}
+
+/* Label penutup */
+.monitoring-cta .page-label {
+  color: #5267d8 !important;
+}
+
+/* Deskripsi penutup */
+.monitoring-cta p:not(.page-label) {
+  color: #69748d !important;
+  line-height: 1.8;
+}
+
+/* Ikon penjelasan */
+.explanation-icon {
+  background: #e8ecff !important;
+  color: #5267d8 !important;
+  border: 1px solid #dce3ff;
+}
+
+/* Ikon kartu informasi */
+.large-info-icon {
+  background: #e8ecff !important;
+  color: #5267d8 !important;
+  border: 1px solid #dce3ff;
+}
+
+/* Highlight informasi */
+.info-highlight {
+  background: #f0f2ff !important;
+  border-color: #e0e5ff !important;
+}
+
+.info-highlight strong {
+  color: #5267d8 !important;
+}
+
+.info-highlight span {
+  color: #69748d !important;
+}
+
+/* Judul dan isi workflow */
+.workflow-item h3 {
+  color: #28345f !important;
+}
+
+.workflow-item p {
+  color: #69748d !important;
+}
+
+/* Nomor workflow */
+.workflow-number {
+  background: #e8ecff !important;
+  color: #5267d8 !important;
+}
+
+/* Panah workflow */
+.workflow-arrow {
+  color: #5267d8 !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .monitoring-cta {
+    padding: 22px;
+  }
+
+  .monitoring-cta h2 {
+    font-size: 21px;
+  }
+
+  .monitoring-cta p {
+    font-size: 14px;
+  }
+}
+/* =========================================
+   RESPONSIVE FINAL - POC MONITOR
+   Optimasi Tablet dan Smartphone
+========================================= */
+
+/* TABLET */
+@media (max-width: 850px) {
+  .main-content {
+    padding: 24px 20px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .sensor-grid,
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sensor-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .workflow-item {
+    flex: 1 1 40%;
+    min-width: 220px;
+  }
+
+  .workflow-arrow {
+    display: none;
+  }
+
+  .history-card {
+    padding: 18px;
+  }
+}
+
+/* SMARTPHONE */
+@media (max-width: 650px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+
+    width: 100%;
+    min-height: auto;
+    height: auto;
+
+    border-right: none;
+    border-bottom: 1px solid #dfe4f2;
+  }
+
+  .brand {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+    background: #e8ecff;
+  }
+
+  .brand h2 {
+    font-size: 16px;
+    color: #28345f;
+  }
+
+  .brand span {
+    color: #7b849d;
+  }
+
+  /* NAVIGASI */
+  .navigation {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+    padding: 10px 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navigation a {
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+
+    padding: 11px 14px;
+
+    font-size: 13px;
+
+    border-radius: 10px;
+  }
+
+  .navigation a:hover {
+    background: #f0f2ff;
+    color: #5267d8;
+  }
+
+  .navigation a.active {
+    background: #e8ecff;
+    color: #5267d8;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+
+    min-height: auto;
+
+    padding: 20px 14px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* HEADER */
+  .page-header h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .page-description {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .section-heading h1,
+  .section-heading h2 {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  /* HERO DASHBOARD */
+  .hero-section {
+    padding: 22px 18px;
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 27px;
+    line-height: 1.25;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .hero-visual {
+    min-height: 190px;
+  }
+
+  .hero-icon {
+    width: 120px;
+    height: 120px;
+    font-size: 55px;
+  }
+
+  .floating-card {
+    padding: 9px 11px;
+  }
+
+  /* SENSOR CARDS */
+  .sensor-grid,
+  .monitoring-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .sensor-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .sensor-value {
+    margin-top: 20px;
+  }
+
+  .sensor-value strong {
+    font-size: 34px;
+  }
+
+  /* PARAMETER */
+  .parameter-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .parameter-item {
+    padding: 18px;
+  }
+
+  .parameter-title h3 {
+    font-size: 18px;
+  }
+
+  /* INFORMATION CARDS */
+  .sensor-info-grid,
+  .about-grid,
+  .purpose-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .sensor-info-card,
+  .info-card {
+    padding: 20px;
+  }
+
+  /* WORKFLOW */
+  .workflow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .workflow-item {
+    width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+
+  .workflow-arrow {
+    display: flex;
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  /* ABOUT */
+  .about-card,
+  .explanation-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  /* HISTORY TABLE */
+  .history-card {
+    padding: 14px;
+    border-radius: 15px;
+  }
+
+  .history-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .history-table {
+    min-width: 760px;
+    width: 100%;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 12px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .history-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+  .delete-history-button {
+    max-width: 100%;
+  }
+
+  /* RECOMMENDATION */
+  .recommendation-card {
+    padding: 18px;
+  }
+
+  .recommendation-header h2 {
+    font-size: 20px;
+  }
+
+  .recommendation-item {
+    padding: 15px;
+  }
+
+  /* CTA */
+  .monitoring-cta {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .monitoring-cta h2 {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  /* PROFILE */
+  .developer-profile {
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .developer-avatar {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+  }
+
+  .developer-info h3 {
+    font-size: 21px;
+  }
+
+  .developer-details {
+    text-align: left;
+  }
+}
+
+/* SMARTPHONE KECIL */
+@media (max-width: 400px) {
+  .main-content {
+    padding: 16px 10px;
+  }
+
+  .page-header h1 {
+    font-size: 22px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .navigation {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .navigation a {
+    padding: 10px 11px;
+    font-size: 12px;
+  }
+
+  .sensor-card {
+    padding: 15px;
+  }
+
+  .parameter-item strong {
+    font-size: 25px;
+  }
+}

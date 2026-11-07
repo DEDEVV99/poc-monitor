@@ -1,34 +1,38 @@
+
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
     <aside className="sidebar">
+      {/* LOGO DAN IDENTITAS APLIKASI */}
       <div className="brand">
-        <div className="brand-icon">🌱</div>
+        <div className="brand-icon">♻️</div>
 
         <div>
-          <h2>POC Monitor</h2>
-          <span>IoT Monitoring</span>
+          <h2>Monitor Sampah Organik</h2>
+          <span>Pemantauan POC Berbasis IoT</span>
         </div>
       </div>
 
+      {/* MENU NAVIGASI */}
       <nav className="navigation">
         <NavLink to="/" end>
           <span>🏠</span>
-          Dashboard
+          Beranda
         </NavLink>
 
         <NavLink to="/monitoring">
           <span>📊</span>
-          Monitoring
+          Pemantauan
         </NavLink>
 
         <NavLink to="/tentang">
           <span>ℹ️</span>
-          Tentang
+          Tentang Aplikasi
         </NavLink>
       </nav>
 
+      {/* STATUS PERANGKAT */}
       <div className="sidebar-footer">
         <div className="connection-status">
           <span className="status-dot"></span>
