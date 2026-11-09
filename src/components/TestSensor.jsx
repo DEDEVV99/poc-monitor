@@ -37,19 +37,18 @@ function TestSensor() {
       });
 
       alert(
-        `Data dummy berhasil dikirim!\n\n` +
-          `Objek: Tanaman Kacang Panjang\n` +
-          `POC: Limbah Organik\n` +
+        `Data simulasi berhasil dikirim!\n\n` +
+          `Objek: Sampah Organik / POC\n` +
           `Pengujian: Data ${id}\n\n` +
-          `pH POC: ${ph}\n` +
+          `pH Sampah Organik / POC: ${ph}\n` +
           `Status pH: ${phStatus.label}\n\n` +
-          `Suhu POC: ${temperature} °C\n` +
+          `Suhu Sampah Organik / POC: ${temperature} °C\n` +
           `Status suhu: ${temperatureStatus.label}\n\n` +
           `Kombinasi: ${label}`
       );
     } catch (error) {
       console.error("Gagal mengirim data dummy:", error);
-      alert("Gagal mengirim data dummy. Periksa koneksi database.");
+      alert("Gagal mengirim data simulasi. Periksa koneksi database.");
     }
   };
 
@@ -58,7 +57,7 @@ function TestSensor() {
       <div className="test-sensor-header">
         <div>
           <p className="page-label">MODE PENGUJIAN</p>
-          <h3>Data Sensor Dummy</h3>
+          <h3>Data Sensor Simulasi</h3>
         </div>
 
         <span className="test-badge">TEST</span>
@@ -66,18 +65,20 @@ function TestSensor() {
 
       <div className="test-plant-info">
         <span>Objek monitoring:</span>
-        <strong>🌱 Tanaman Kacang Panjang</strong>
+        <strong>♻️ Sampah Organik / POC</strong>
       </div>
 
       <p className="test-description">
         Gunakan sembilan skenario berikut untuk menguji kombinasi
-        status pH dan suhu POC. Data ini merupakan data simulasi,
+        status pH dan suhu sampah organik serta Pupuk Organik Cair
+        (POC). Data yang dikirim merupakan data simulasi,
         bukan hasil pengukuran sensor aktual.
       </p>
 
       <div className="test-buttons">
         {testCases.map((testCase) => {
           const phStatus = getStatus(testCase.ph, pocSettings.ph);
+
           const temperatureStatus = getStatus(
             testCase.temperature,
             pocSettings.temperature

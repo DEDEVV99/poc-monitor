@@ -13,21 +13,20 @@ function Dashboard() {
           </p>
 
           <h1>
-            Pemantauan Pupuk Organik Cair dari Pengolahan Sampah Organik
+            Pemantauan pH dan Suhu Sampah Organik serta Pupuk Organik Cair
           </h1>
 
           <p className="dashboard-hero-description">
             Monitor Sampah Organik merupakan sistem pemantauan berbasis
             Internet of Things (IoT) dan web untuk memantau parameter
-            pH dan suhu Pupuk Organik Cair (POC) yang dihasilkan dari
-            pengolahan sampah organik rumah tangga.
+            pH dan suhu pada sampah organik serta Pupuk Organik Cair (POC)
+            hasil pengolahan sampah organik rumah tangga.
           </p>
 
           <p className="dashboard-hero-note">
-            Sistem berfokus pada pemantauan kondisi POC melalui
-            parameter pH dan suhu. Tanaman kacang panjang digunakan
-            sebagai konteks penelitian, bukan sebagai objek pengukuran
-            sensor secara langsung.
+            Sistem berfokus pada pemantauan parameter pH dan suhu
+            sampah organik selama proses pengolahan serta Pupuk
+            Organik Cair (POC) yang dihasilkan.
           </p>
         </div>
 
@@ -64,9 +63,8 @@ function Dashboard() {
           </h2>
 
           <p>
-            Sampah organik rumah tangga dimanfaatkan sebagai bahan
-            dasar pengolahan Pupuk Organik Cair yang menjadi objek
-            pemantauan sistem.
+            Sampah organik rumah tangga dan Pupuk Organik Cair (POC)
+            menjadi fokus pemantauan parameter pH dan suhu pada sistem.
           </p>
         </div>
 
@@ -87,9 +85,9 @@ function Dashboard() {
 
             <p>
               Sampah organik rumah tangga, seperti sisa sayuran
-              dan bahan organik lainnya, dapat dimanfaatkan
-              sebagai bahan dasar dalam proses pengolahan
-              Pupuk Organik Cair.
+              dan bahan organik lainnya, menjadi bahan yang
+              dipantau kondisi pH dan suhunya selama proses
+              pengolahan menjadi Pupuk Organik Cair.
             </p>
 
             <div className="info-highlight">
@@ -98,7 +96,7 @@ function Dashboard() {
               </strong>
 
               <span>
-                Limbah Organik Rumah Tangga
+                Sampah Organik Rumah Tangga
               </span>
             </div>
           </div>
@@ -119,7 +117,7 @@ function Dashboard() {
 
             <p>
               Pupuk Organik Cair merupakan hasil pengolahan
-              bahan organik yang menjadi objek pemantauan
+              sampah organik yang turut menjadi objek pemantauan
               sistem melalui pengukuran parameter pH dan suhu.
             </p>
 
@@ -152,8 +150,9 @@ function Dashboard() {
           </h2>
 
           <p>
-            Sistem memantau dua parameter utama Pupuk Organik Cair,
-            yaitu tingkat keasaman dan temperatur.
+            Sistem memantau dua parameter utama, yaitu tingkat
+            keasaman (pH) dan temperatur (suhu) pada sampah
+            organik serta Pupuk Organik Cair (POC).
           </p>
         </div>
 
@@ -174,8 +173,8 @@ function Dashboard() {
 
             <p>
               Sensor pH digunakan untuk memperoleh nilai
-              tingkat keasaman atau kebasaan Pupuk Organik Cair
-              selama proses pemantauan.
+              tingkat keasaman atau kebasaan sampah organik
+              dalam proses pengolahan dan Pupuk Organik Cair.
             </p>
 
             <div className="info-highlight">
@@ -200,13 +199,13 @@ function Dashboard() {
             </div>
 
             <h3>
-              Suhu Pupuk Organik Cair
+              Suhu Sampah Organik dan POC
             </h3>
 
             <p>
               Sensor suhu digunakan untuk memperoleh nilai
-              temperatur Pupuk Organik Cair selama
-              proses pemantauan berlangsung.
+              temperatur sampah organik selama proses pengolahan
+              serta Pupuk Organik Cair yang dihasilkan.
             </p>
 
             <div className="info-highlight">
@@ -227,7 +226,7 @@ function Dashboard() {
           digunakan dalam sistem saat ini. Rentang suhu perlu
           dijelaskan berdasarkan sumber ilmiah yang relevan
           dan tidak dianggap sebagai standar universal
-          untuk seluruh jenis Pupuk Organik Cair.
+          untuk seluruh jenis sampah organik dan Pupuk Organik Cair.
         </p>
       </section>
 
@@ -267,7 +266,7 @@ function Dashboard() {
 
               <p>
                 Sensor membaca nilai pH dan suhu
-                Pupuk Organik Cair.
+                sampah organik serta Pupuk Organik Cair.
               </p>
             </div>
           </div>
@@ -344,8 +343,8 @@ function Dashboard() {
               </h3>
 
               <p>
-                Data pH dan suhu POC ditampilkan
-                melalui aplikasi Monitor Sampah Organik.
+                Data pH dan suhu sampah organik serta POC
+                ditampilkan melalui aplikasi Monitor Sampah Organik.
               </p>
             </div>
           </div>
@@ -364,7 +363,7 @@ function Dashboard() {
           </p>
 
           <h2>
-            Pemantauan POC Berbasis IoT
+            Pemantauan Sampah Organik dan POC Berbasis IoT
           </h2>
         </div>
 
@@ -378,14 +377,14 @@ function Dashboard() {
 
           <div>
             <h3>
-              Pemantauan Parameter POC
+              Pemantauan Parameter Sampah Organik dan POC
             </h3>
 
             <p>
               Monitor Sampah Organik menggunakan teknologi
               Internet of Things (IoT) untuk memperoleh data
-              pH dan suhu Pupuk Organik Cair melalui sensor
-              yang terhubung dengan ESP8266.
+              pH dan suhu sampah organik serta Pupuk Organik Cair
+              melalui sensor yang terhubung dengan ESP8266.
             </p>
 
             <p>
@@ -396,9 +395,9 @@ function Dashboard() {
             </p>
 
             <p>
-              Sistem mendukung pemantauan kondisi Pupuk
-              Organik Cair yang dihasilkan dari pengolahan
-              sampah organik rumah tangga.
+              Sistem mendukung pemantauan kondisi sampah organik
+              selama proses pengolahan dan Pupuk Organik Cair
+              yang dihasilkan dari sampah organik rumah tangga.
             </p>
           </div>
         </div>
@@ -425,23 +424,21 @@ function Dashboard() {
             <p>
               Sistem Monitor Sampah Organik berfokus
               pada pemantauan parameter pH dan suhu
-              Pupuk Organik Cair yang berasal dari
-              pengolahan bahan organik.
+              sampah organik selama proses pengolahan serta
+              Pupuk Organik Cair (POC) yang dihasilkan.
             </p>
 
             <p>
-              Sampah organik rumah tangga merupakan
-              bahan dasar pengolahan POC, sedangkan
-              Pupuk Organik Cair menjadi objek
-              pengukuran sensor.
+              Sampah organik rumah tangga menjadi bahan dasar
+              pengolahan POC. Sistem memfokuskan pemantauan
+              parameter pH dan suhu pada sampah organik
+              serta Pupuk Organik Cair.
             </p>
 
             <p>
-              Tanaman kacang panjang digunakan sebagai
-              konteks penelitian. Sistem tidak mengukur
-              pH tanaman, suhu tanaman, pertumbuhan
-              tanaman, maupun parameter tanaman lainnya
-              secara langsung.
+              Sistem tidak berfokus pada pengamatan tanaman.
+              Pengukuran diarahkan pada parameter pH dan suhu
+              sampah organik serta Pupuk Organik Cair.
             </p>
 
             <p>
@@ -465,12 +462,12 @@ function Dashboard() {
           </p>
 
           <h2>
-            Pemantauan Pupuk Organik Cair Berbasis IoT
+            Pemantauan pH dan Suhu Sampah Organik serta POC Berbasis IoT
           </h2>
 
           <p>
-            Pantau data pH dan suhu Pupuk Organik Cair
-            hasil pengolahan sampah organik melalui
+            Pantau data pH dan suhu sampah organik serta
+            Pupuk Organik Cair hasil pengolahan melalui
             perangkat IoT dan website.
           </p>
         </div>

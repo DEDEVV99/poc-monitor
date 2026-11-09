@@ -9,7 +9,7 @@ import {
 } from "../utils/sensorStatus";
 
 /* =========================================
-   IKON SVG MONOKROM INDIGO
+   IKON SVG MONOKROM
 ========================================= */
 
 function Icon({ name, size = 24 }) {
@@ -184,27 +184,27 @@ function Monitoring() {
   // FORMAT NAMA OBJEK
   const getObjectName = (plantId) => {
     if (plantId === "kacang_panjang") {
-      return "POC Limbah Organik";
+      return "Sampah Organik / POC";
     }
 
-    if (plantId === "kangkung") {
-      return "Data Lama - Kangkung";
+    if (plantId === "kangkung" || plantId === "terong") {
+      return "Data Pemantauan Sampah Organik";
     }
 
-    if (plantId === "terong") {
-      return "Data Lama - Terong";
-    }
-
-    return "POC Limbah Organik";
+    return "Sampah Organik / POC";
   };
 
   // PARAMETER RIWAYAT
   const getHistorySettings = (plantId) => {
-    if (plantId === "kacang_panjang") {
+    if (
+      plantId === "kacang_panjang" ||
+      plantId === "kangkung" ||
+      plantId === "terong"
+    ) {
       return poc;
     }
 
-    return null;
+    return poc;
   };
 
   // CHECK DATA
@@ -284,8 +284,9 @@ function Monitoring() {
           </h1>
 
           <p className="page-description">
-            Pantau parameter pH dan suhu Pupuk Organik Cair (POC)
-            yang dihasilkan dari pengolahan sampah organik rumah tangga.
+            Pantau parameter pH dan suhu sampah organik
+            serta Pupuk Organik Cair (POC) yang dihasilkan
+            dari pengolahan sampah organik rumah tangga.
           </p>
         </div>
       </div>
@@ -299,22 +300,23 @@ function Monitoring() {
 
           <h3>
             <Icon name="recycle" size={23} />
-            {" "}Sampah Organik Rumah Tangga
+            {" "}Sampah Organik dan POC
           </h3>
 
           <p>
-            Bahan pengolahan Pupuk Organik Cair
+            Pemantauan pH dan suhu sampah organik
+            serta Pupuk Organik Cair.
           </p>
         </div>
 
         <div className="plant-select-wrapper">
           <strong>
-            POC Limbah Organik
+            Sampah Organik / POC
           </strong>
         </div>
       </div>
 
-      {/* PARAMETER POC */}
+      {/* PARAMETER PEMANTAUAN */}
       <div className="parameter-card">
         <div className="parameter-title">
           <span className="plant-icon">
@@ -327,7 +329,7 @@ function Monitoring() {
             </p>
 
             <h3>
-              POC Limbah Organik
+              Sampah Organik / POC
             </h3>
           </div>
         </div>
@@ -336,7 +338,7 @@ function Monitoring() {
           <div className="parameter-item">
             <span>
               <Icon name="ph" size={17} />
-              {" "}pH POC
+              {" "}pH Sampah Organik / POC
             </span>
 
             <strong>
@@ -347,7 +349,7 @@ function Monitoring() {
           <div className="parameter-item">
             <span>
               <Icon name="temperature" size={17} />
-              {" "}Suhu POC
+              {" "}Suhu Sampah Organik / POC
             </span>
 
             <strong>
@@ -366,7 +368,7 @@ function Monitoring() {
             </p>
 
             <h2>
-              Kondisi POC Saat Ini
+              Kondisi Sampah Organik dan POC Saat Ini
             </h2>
           </div>
 
@@ -393,24 +395,26 @@ function Monitoring() {
             </h3>
 
             <p>
-              Gunakan tombol pengujian untuk mengirim data simulasi
-              pH dan suhu POC.
+              Gunakan tombol pengujian untuk mengirim
+              data simulasi pH dan suhu sampah organik
+              serta POC.
             </p>
           </div>
         ) : (
           <div className="sensor-grid">
 
-            {/* pH POC */}
+            {/* pH SAMPAH ORGANIK / POC */}
             <div className="sensor-card poc-interactive-card poc-animate-up poc-delay-1">
               <div className="sensor-card-top">
                 <div>
                   <span className="sensor-name">
                     <Icon name="ph" size={19} />
-                    {" "}pH POC
+                    {" "}pH Sampah Organik / POC
                   </span>
 
                   <p>
-                    Tingkat keasaman Pupuk Organik Cair
+                    Tingkat keasaman sampah organik
+                    dan Pupuk Organik Cair
                   </p>
                 </div>
 
@@ -426,22 +430,23 @@ function Monitoring() {
               </div>
 
               <div className="sensor-range">
-                Rentang acuan POC:{" "}
+                Rentang acuan sistem:{" "}
                 {poc.ph.low}–{poc.ph.high}
               </div>
             </div>
 
-            {/* SUHU POC */}
+            {/* SUHU SAMPAH ORGANIK / POC */}
             <div className="sensor-card poc-interactive-card poc-animate-up poc-delay-2">
               <div className="sensor-card-top">
                 <div>
                   <span className="sensor-name">
                     <Icon name="temperature" size={19} />
-                    {" "}Suhu POC
+                    {" "}Suhu Sampah Organik / POC
                   </span>
 
                   <p>
-                    Temperatur Pupuk Organik Cair
+                    Temperatur sampah organik
+                    dan Pupuk Organik Cair
                   </p>
                 </div>
 
@@ -461,8 +466,9 @@ function Monitoring() {
               </div>
 
               <div className="sensor-range">
-                Rentang acuan POC:{" "}
-                {poc.temperature.low}–{poc.temperature.high} °C
+                Rentang acuan sistem:{" "}
+                {poc.temperature.low}–
+                {poc.temperature.high} °C
               </div>
             </div>
 
@@ -505,7 +511,7 @@ function Monitoring() {
               </p>
 
               <h2>
-                Kondisi Parameter POC
+                Kondisi Parameter Sampah Organik dan POC
               </h2>
             </div>
 
@@ -520,7 +526,7 @@ function Monitoring() {
             <div className="recommendation-item">
               <div className="recommendation-item-title">
                 <strong>
-                  pH POC
+                  pH Sampah Organik / POC
                 </strong>
 
                 <span
@@ -539,7 +545,7 @@ function Monitoring() {
             <div className="recommendation-item">
               <div className="recommendation-item-title">
                 <strong>
-                  Suhu POC
+                  Suhu Sampah Organik / POC
                 </strong>
 
                 <span
@@ -571,7 +577,7 @@ function Monitoring() {
 
             <h2>
               <Icon name="history" size={23} />
-              {" "}Riwayat Pemantauan POC
+              {" "}Riwayat Pemantauan Sampah Organik dan POC
             </h2>
           </div>
         </div>
@@ -591,7 +597,8 @@ function Monitoring() {
               </div>
 
               <p>
-                Belum ada riwayat pemantauan POC.
+                Belum ada riwayat pemantauan
+                sampah organik dan POC.
               </p>
             </div>
           ) : (
